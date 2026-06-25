@@ -1,0 +1,418 @@
+/* =============================================
+   TATTVAM — Chat With Epic Characters CSS
+   ============================================= */
+
+/* ——— Page Layout ——— */
+.char-page {
+  padding-top: var(--nav-height);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-cream);
+}
+
+.char-header {
+  text-align: center;
+  padding: var(--space-10) var(--space-6) var(--space-6);
+  position: relative;
+  overflow: hidden;
+}
+
+.char-header h1 {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  color: var(--color-text-dark);
+  margin-bottom: var(--space-3);
+}
+
+.char-header p {
+  color: var(--color-text-secondary);
+  font-size: var(--text-base);
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+/* ——— Selection Grid ——— */
+.selection-container {
+  max-width: 1000px;
+  margin: 0 auto var(--space-16);
+  padding: 0 var(--space-6);
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--space-4);
+  transition: all var(--transition-base);
+}
+
+.selection-container.hidden {
+  opacity: 0;
+  transform: translateY(-20px);
+  pointer-events: none;
+  display: none !important;
+}
+
+.char-select-card {
+  background: var(--color-warm-white);
+  border: 1.5px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6) var(--space-4);
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.char-select-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+}
+
+.char-select-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-gold);
+}
+
+.char-avatar-circle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  margin: 0 auto var(--space-4);
+  box-shadow: var(--shadow-sm);
+  color: var(--color-cream);
+}
+
+.char-select-name {
+  font-family: var(--font-heading);
+  font-size: var(--text-md);
+  font-weight: 600;
+  color: var(--color-text-dark);
+  margin-bottom: 2px;
+}
+
+.char-select-title {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  font-weight: 500;
+  display: block;
+  margin-bottom: var(--space-3);
+}
+
+.char-select-desc {
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+/* Character Specific Border Accents & Avatars */
+.card-krishna::before { background-color: var(--color-gold); }
+.card-krishna .char-avatar-circle { background-color: var(--color-gold); }
+
+.card-arjuna::before { background-color: #5D7A5D; }
+.card-arjuna .char-avatar-circle { background-color: #5D7A5D; }
+
+.card-hanuman::before { background-color: var(--color-saffron); }
+.card-hanuman .char-avatar-circle { background-color: var(--color-saffron); }
+
+.card-bhishma::before { background-color: var(--color-gold); }
+.card-bhishma .char-avatar-circle { background-color: var(--color-gold); }
+
+.card-vidura::before { background-color: #8A6E5A; }
+.card-vidura .char-avatar-circle { background-color: #8A6E5A; }
+
+.card-chanakya::before { background-color: #3F3A34; }
+.card-chanakya .char-avatar-circle { background-color: #3F3A34; }
+
+.card-vivekananda::before { background-color: #C74634; }
+.card-vivekananda .char-avatar-circle { background-color: #C74634; }
+
+.card-shankara::before { background-color: #D08930; }
+.card-shankara .char-avatar-circle { background-color: #D08930; }
+
+.card-shivaji::before { background-color: #D25019; }
+.card-shivaji .char-avatar-circle { background-color: #D25019; }
+
+.card-mirabai::before { background-color: #3F8A80; }
+.card-mirabai .char-avatar-circle { background-color: #3F8A80; }
+
+/* ——— Active Chat Panel ——— */
+.chat-container {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto var(--space-16);
+  padding: 0 var(--space-6);
+  display: none;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.chat-container.active {
+  display: block;
+  animation: charChatAppear 0.6s var(--ease-out-expo) forwards;
+}
+
+@keyframes charChatAppear {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.char-chat-panel {
+  background: var(--color-warm-white);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  min-height: 550px;
+  max-height: calc(100vh - var(--nav-height) - 160px);
+}
+
+.char-chat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) var(--space-6);
+  background: var(--color-parchment);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.char-chat-header-info {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.char-chat-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: var(--color-cream);
+  font-weight: bold;
+}
+
+.char-chat-details h3 {
+  font-family: var(--font-heading);
+  font-size: var(--text-md);
+  font-weight: 600;
+  color: var(--color-text-dark);
+}
+
+.char-chat-details span {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+}
+
+.char-back-btn {
+  background: transparent;
+  border: 1px solid var(--color-border-medium);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.char-back-btn:hover {
+  background: var(--color-text-dark);
+  color: var(--color-cream);
+  border-color: var(--color-text-dark);
+}
+
+/* Chat Bubbles Area */
+.char-messages-area {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  background-color: var(--color-parchment);
+  background-image:
+    radial-gradient(ellipse at 15% 20%, rgba(210, 180, 140, 0.08) 0%, transparent 45%),
+    radial-gradient(ellipse at 85% 80%, rgba(210, 180, 140, 0.05) 0%, transparent 45%);
+}
+
+.char-message-row {
+  display: flex;
+  gap: var(--space-3);
+  max-width: 80%;
+}
+
+.char-message-row.user {
+  align-self: flex-end;
+  flex-direction: row-reverse;
+}
+
+.char-message-bubble {
+  padding: var(--space-4) var(--space-5);
+  border-radius: var(--radius-lg);
+  font-size: var(--text-sm);
+  line-height: 1.7;
+}
+
+.char-message-bubble.character {
+  background: var(--color-warm-white);
+  border: 1.5px solid var(--color-border-light);
+  border-radius: 0 var(--radius-lg) var(--radius-lg) var(--radius-lg);
+  color: var(--color-text-primary);
+  box-shadow: var(--shadow-xs);
+}
+
+.char-message-bubble.user {
+  background: var(--color-text-dark);
+  color: var(--color-cream);
+  border-radius: var(--radius-lg) 0 var(--radius-lg) var(--radius-lg);
+}
+
+/* Typist / Loader bubble */
+.char-typing-bubble {
+  background: var(--color-warm-white);
+  border: 1px solid var(--color-border-light);
+  padding: var(--space-3) var(--space-4);
+  border-radius: 0 var(--radius-md) var(--radius-md) var(--radius-md);
+  display: flex;
+  gap: 4px;
+}
+
+.char-typing-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--color-text-muted);
+  border-radius: 50%;
+  animation: charDotBounce 1.4s infinite ease-in-out;
+}
+.char-typing-dot:nth-child(2) { animation-delay: 0.2s; }
+.char-typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes charDotBounce {
+  0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
+  40% { transform: scale(1.1); opacity: 1; }
+}
+
+/* Input Row */
+.char-chat-input-container {
+  padding: var(--space-4) var(--space-6);
+  background: var(--color-warm-white);
+  border-top: 1px solid var(--color-border-light);
+}
+
+.char-chat-input-row {
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-end;
+}
+
+.char-textarea {
+  flex: 1;
+  padding: var(--space-3) var(--space-5);
+  background: var(--color-cream);
+  border: 1.5px solid var(--color-border-light);
+  border-radius: var(--radius-full);
+  outline: none;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-text-primary);
+  transition: all var(--transition-fast);
+  min-height: 44px;
+  max-height: 120px;
+  resize: none;
+  line-height: 1.5;
+}
+
+.char-textarea:focus {
+  border-color: var(--color-gold);
+}
+
+.char-send-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--color-cream);
+  transition: all var(--transition-fast);
+}
+
+.char-send-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Theme Adaptive Colors in Chat */
+.theme--krishna .char-chat-avatar { background-color: var(--color-gold); }
+.theme--krishna .char-send-btn { background-color: var(--color-gold); }
+.theme--krishna .char-chat-panel { border-top: 4px solid var(--color-gold); }
+
+.theme--arjuna .char-chat-avatar { background-color: #5D7A5D; }
+.theme--arjuna .char-send-btn { background-color: #5D7A5D; }
+.theme--arjuna .char-chat-panel { border-top: 4px solid #5D7A5D; }
+
+.theme--hanuman .char-chat-avatar { background-color: var(--color-saffron); }
+.theme--hanuman .char-send-btn { background-color: var(--color-saffron); }
+.theme--hanuman .char-chat-panel { border-top: 4px solid var(--color-saffron); }
+
+.theme--bhishma .char-chat-avatar { background-color: var(--color-gold); }
+.theme--bhishma .char-send-btn { background-color: var(--color-gold); }
+.theme--bhishma .char-chat-panel { border-top: 4px solid var(--color-gold); }
+
+.theme--vidura .char-chat-avatar { background-color: #8A6E5A; }
+.theme--vidura .char-send-btn { background-color: #8A6E5A; }
+.theme--vidura .char-chat-panel { border-top: 4px solid #8A6E5A; }
+
+.theme--chanakya .char-chat-avatar { background-color: #3F3A34; }
+.theme--chanakya .char-send-btn { background-color: #3F3A34; }
+.theme--chanakya .char-chat-panel { border-top: 4px solid #3F3A34; }
+
+.theme--vivekananda .char-chat-avatar { background-color: #C74634; }
+.theme--vivekananda .char-send-btn { background-color: #C74634; }
+.theme--vivekananda .char-chat-panel { border-top: 4px solid #C74634; }
+
+.theme--shankara .char-chat-avatar { background-color: #D08930; }
+.theme--shankara .char-send-btn { background-color: #D08930; }
+.theme--shankara .char-chat-panel { border-top: 4px solid #D08930; }
+
+.theme--shivaji .char-chat-avatar { background-color: #D25019; }
+.theme--shivaji .char-send-btn { background-color: #D25019; }
+.theme--shivaji .char-chat-panel { border-top: 4px solid #D25019; }
+
+.theme--mirabai .char-chat-avatar { background-color: #3F8A80; }
+.theme--mirabai .char-send-btn { background-color: #3F8A80; }
+.theme--mirabai .char-chat-panel { border-top: 4px solid #3F8A80; }
+
+/* ——— Responsive ——— */
+@media (max-width: 1024px) {
+  .selection-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .selection-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .selection-container {
+    grid-template-columns: 1fr;
+  }
+}

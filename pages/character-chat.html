@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat with Epic Characters - TatTvam</title>
+  <meta name="description" content="Seek different philosophical perspectives by chatting with characters from Indian scriptures: Arjuna, Hanuman, Bhishma, Vidura, and Chanakya.">
+  <link rel="stylesheet" href="../css/design-system.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/patterns.css">
+  <link rel="stylesheet" href="../css/pages/character-chat.css">
+</head>
+<body class="char-page">
+
+  <!-- SVG Filters for parchment texture -->
+  <svg style="display:none">
+    <filter id="parchment-texture">
+      <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="4" seed="1"/>
+      <feDiffuseLighting lighting-color="#F8F0E0" surfaceScale="1.5">
+        <feDistantLight azimuth="75" elevation="55"/>
+      </feDiffuseLighting>
+    </filter>
+  </svg>
+
+  <!-- Navigation -->
+  <nav class="nav scrolled" id="mainNav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <span class="logo-mark">त</span>
+        TatTvam
+      </a>
+      <div class="nav-links">
+        <a href="krishna-guide.html" class="nav-link">Krishna Guide</a>
+        <a href="gita-verse.html" class="nav-link">Daily Verse</a>
+        <a href="dharma-compass.html" class="nav-link">Dharma Compass</a>
+        <a href="gita-explorer.html" class="nav-link">Gita Explorer</a>
+        <a href="guna-quiz.html" class="nav-link">Guna Quiz</a>
+        <a href="battlefield.html" class="nav-link">Battlefield</a>
+        <a href="dharma-streak.html" class="nav-link">Streak</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="krishna-guide.html" class="nav-link">Krishna Guide</a>
+    <a href="gita-verse.html" class="nav-link">Daily Verse</a>
+    <a href="dharma-compass.html" class="nav-link">Dharma Compass</a>
+    <a href="gita-explorer.html" class="nav-link">Gita Explorer</a>
+    <a href="guna-quiz.html" class="nav-link">Guna Quiz</a>
+    <a href="battlefield.html" class="nav-link">Battlefield</a>
+    <a href="dharma-streak.html" class="nav-link">Streak</a>
+  </div>
+
+  <!-- Header -->
+  <header class="char-header reveal">
+    <h1>Council of Mentors</h1>
+    <p>Consult the council of sages, warriors, and historical figures. Each offers a distinct philosophical and practical perspective on your dilemmas.</p>
+  </header>
+
+  <!-- Categories -->
+  <div class="container text-center reveal" style="margin-bottom: var(--space-4);">
+    <h2 style="font-family: var(--font-heading); font-size: var(--text-lg); color: var(--color-gold);">Epic Characters</h2>
+  </div>
+
+  <!-- Character Selection Grid -->
+  <section class="selection-container reveal" id="selectionContainer">
+    <!-- Krishna Card -->
+    <div class="char-select-card card-krishna" data-char="krishna">
+      <div class="char-avatar-circle">कृ</div>
+      <h3 class="char-select-name">Sri Krishna</h3>
+      <span class="char-select-title">The Charioteer</span>
+      <p class="char-select-desc">Guides Arjuna and seekers alike, offering cosmic perspectives on duty, action, and detachment.</p>
+    </div>
+
+    <!-- Arjuna Card -->
+    <div class="char-select-card card-arjuna" data-char="arjuna">
+      <div class="char-avatar-circle">अ</div>
+      <h3 class="char-select-name">Arjuna</h3>
+      <span class="char-select-title">The Archer</span>
+      <p class="char-select-desc">Faces battles with deep self-inquiry, seeking to balance duty with compassion during high-stakes crises.</p>
+    </div>
+
+    <!-- Hanuman Card -->
+    <div class="char-select-card card-hanuman" data-char="hanuman">
+      <div class="char-avatar-circle">ह</div>
+      <h3 class="char-select-name">Hanuman</h3>
+      <span class="char-select-title">The Devotee</span>
+      <p class="char-select-desc">Represents absolute strength through complete humility, overcoming obstacles through selfless devotion.</p>
+    </div>
+
+    <!-- Bhishma Card -->
+    <div class="char-select-card card-bhishma" data-char="bhishma">
+      <div class="char-avatar-circle">भी</div>
+      <h3 class="char-select-name">Bhishma</h3>
+      <span class="char-select-title">The Patriarch</span>
+      <p class="char-select-desc">Stands steadfast by oaths, sacrificing personal joy for institutional duty and societal contract.</p>
+    </div>
+
+    <!-- Vidura Card -->
+    <div class="char-select-card card-vidura" data-char="vidura">
+      <div class="char-avatar-circle">वि</div>
+      <h3 class="char-select-name">Vidura</h3>
+      <span class="char-select-title">The Counselor</span>
+      <p class="char-select-desc">Teaches satya and vidura-niti - practical ethics, family unity, and simple righteous living for daily life.</p>
+    </div>
+
+    <!-- Chanakya Card -->
+    <div class="char-select-card card-chanakya" data-char="chanakya">
+      <div class="char-avatar-circle">चा</div>
+      <h3 class="char-select-name">Chanakya</h3>
+      <span class="char-select-title">The Strategist</span>
+      <p class="char-select-desc">Applies sharp pragmatism, statecraft, economics, and strategic foresight to execute goals and out-think rivals.</p>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <div class="container text-center reveal" style="margin-bottom: var(--space-4);">
+    <h2 style="font-family: var(--font-heading); font-size: var(--text-lg); color: var(--color-gold);">Historical Mentors</h2>
+  </div>
+
+  <section class="selection-container reveal" id="historicalSelectionContainer">
+    <!-- Vivekananda Card -->
+    <div class="char-select-card card-vivekananda" data-char="vivekananda">
+      <div class="char-avatar-circle">वि</div>
+      <h3 class="char-select-name">Swami Vivekananda</h3>
+      <span class="char-select-title">The Awakening Roar</span>
+      <p class="char-select-desc">Channels immense willpower, fearlessness, and the practical application of Vedanta to modern struggles.</p>
+    </div>
+
+    <!-- Shankaracharya Card -->
+    <div class="char-select-card card-shankara" data-char="shankara">
+      <div class="char-avatar-circle">शं</div>
+      <h3 class="char-select-name">Adi Shankaracharya</h3>
+      <span class="char-select-title">The Non-Dualist</span>
+      <p class="char-select-desc">Cuts through illusion with razor-sharp logic. Teaches Advaita (non-duality) and supreme detachment.</p>
+    </div>
+
+    <!-- Shivaji Card -->
+    <div class="char-select-card card-shivaji" data-char="shivaji">
+      <div class="char-avatar-circle">शि</div>
+      <h3 class="char-select-name">Shivaji Maharaj</h3>
+      <span class="char-select-title">The Dharmic King</span>
+      <p class="char-select-desc">Embodies righteous action, leadership, protecting dharma against all odds, and honoring all.</p>
+    </div>
+
+    <!-- Mirabai Card -->
+    <div class="char-select-card card-mirabai" data-char="mirabai">
+      <div class="char-avatar-circle">मी</div>
+      <h3 class="char-select-name">Mirabai</h3>
+      <span class="char-select-title">The Divine Lover</span>
+      <p class="char-select-desc">Represents absolute surrender and blissful devotion. Teaches that love for the divine supersedes societal norms.</p>
+    </div>
+  </section>
+
+  <!-- Active Chat Container -->
+  <section class="chat-container container" id="chatContainer">
+    <div class="char-chat-panel" id="chatPanel">
+      
+      <!-- Chat Header -->
+      <div class="char-chat-header">
+        <div class="char-chat-header-info">
+          <div class="char-chat-avatar" id="charChatAvatar">अ</div>
+          <div class="char-chat-details">
+            <h3 id="charChatName">Arjuna</h3>
+            <span id="charChatTitle">The Peerless Archer</span>
+          </div>
+        </div>
+        <button class="char-back-btn" id="backBtn">&larr; Counsel Room</button>
+      </div>
+
+      <!-- Messages Display Area -->
+      <div class="char-messages-area" id="charMessagesArea">
+        <!-- Messages are rendered dynamically by JS -->
+      </div>
+
+      <!-- Text Input Area -->
+      <div class="char-chat-input-container">
+        <div class="char-chat-input-row">
+          <textarea class="char-textarea" id="charInput" placeholder="Consult your advisor..." rows="1"></textarea>
+          <button class="char-send-btn" id="charSendBtn" aria-label="Send message">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px; height:20px;">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <span>© 2026 TatTvam - tat tvam asi</span>
+        <span>Built with devotion</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/app.js"></script>
+  <script src="../js/character-chat.js"></script>
+</body>
+</html>

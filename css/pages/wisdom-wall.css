@@ -1,0 +1,209 @@
+/* =============================================
+   TATTVAM — Anonymous Wisdom Wall CSS
+   ============================================= */
+
+/* ——— Page Layout ——— */
+.wall-page {
+  padding-top: var(--nav-height);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.wall-header {
+  text-align: center;
+  padding: var(--space-10) var(--space-6) var(--space-6);
+  position: relative;
+  overflow: hidden;
+}
+
+.wall-header h1 {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  color: var(--color-text-dark);
+  margin-bottom: var(--space-3);
+}
+
+.wall-header p {
+  color: var(--color-text-secondary);
+  font-size: var(--text-base);
+  max-width: 540px;
+  margin: 0 auto var(--space-6);
+}
+
+/* ——— Masonry Wall Grid ——— */
+.wall-container {
+  max-width: var(--max-width-wide);
+  width: 100%;
+  margin: 0 auto var(--space-20);
+  padding: 0 var(--space-6);
+  column-count: 3;
+  column-gap: var(--space-6);
+}
+
+.wisdom-card {
+  break-inside: avoid;
+  background: var(--color-warm-white);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6) var(--space-6) var(--space-5);
+  margin-bottom: var(--space-6);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.wisdom-card::before {
+  content: '“';
+  position: absolute;
+  top: -8px;
+  left: 12px;
+  font-family: var(--font-heading);
+  font-size: 4rem;
+  color: rgba(207, 166, 107, 0.08);
+  line-height: 1;
+}
+
+.wisdom-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-gold);
+}
+
+.wisdom-text {
+  font-family: var(--font-heading);
+  font-size: var(--text-base);
+  color: var(--color-text-dark);
+  line-height: 1.7;
+  font-style: italic;
+  margin-bottom: var(--space-4);
+  position: relative;
+  z-index: 1;
+}
+
+.wisdom-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 10px;
+  color: var(--color-text-muted);
+  border-top: 1px solid var(--color-border-light);
+  padding-top: var(--space-3);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.wisdom-tag {
+  color: var(--color-gold);
+  font-weight: 600;
+}
+
+/* ——— Add Wisdom Modal ——— */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(47, 42, 38, 0.6);
+  backdrop-filter: blur(4px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--z-modal);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.modal-overlay.active {
+  display: flex;
+  animation: fadeIn 0.4s ease forwards;
+}
+
+.modal-card {
+  background: var(--color-warm-white);
+  border: 1.5px solid var(--color-champagne);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  max-width: 500px;
+  width: 90%;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  transform: translateY(20px);
+  transition: transform var(--transition-base);
+}
+
+.modal-overlay.active .modal-card {
+  transform: translateY(0);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  line-height: 1;
+}
+
+.modal-close-btn:hover {
+  color: var(--color-text-dark);
+}
+
+.modal-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--color-text-dark);
+  margin-bottom: var(--space-4);
+}
+
+.modal-textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: var(--space-4);
+  background: var(--color-parchment);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  outline: none;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-4);
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.modal-textarea:focus {
+  border-color: var(--color-gold);
+}
+
+.modal-input {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-parchment);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  outline: none;
+  font-size: var(--text-xs);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-6);
+}
+
+.modal-input:focus {
+  border-color: var(--color-gold);
+}
+
+/* ——— Responsive ——— */
+@media (max-width: 1024px) {
+  .wall-container {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .wall-container {
+    column-count: 1;
+  }
+}

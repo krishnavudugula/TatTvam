@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discover Your Guna - TatTvam</title>
+  <meta name="description" content="Assess your spiritual personality and find out if Sattva (purity), Rajas (passion), or Tamas (inertia) dominates your nature. Based on the Bhagavad Gita.">
+  <link rel="stylesheet" href="../css/design-system.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/patterns.css">
+  <link rel="stylesheet" href="../css/pages/guna-quiz.css">
+</head>
+<body class="guna-page">
+
+  <!-- SVG Filters for parchment texture -->
+  <svg style="display:none">
+    <filter id="parchment-texture">
+      <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="4" seed="1"/>
+      <feDiffuseLighting lighting-color="#F8F0E0" surfaceScale="1.5">
+        <feDistantLight azimuth="75" elevation="55"/>
+      </feDiffuseLighting>
+    </filter>
+  </svg>
+
+  <!-- Navigation -->
+  <nav class="nav scrolled" id="mainNav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <span class="logo-mark">त</span>
+        TatTvam
+      </a>
+      <div class="nav-links">
+        <a href="krishna-guide.html" class="nav-link">Krishna Guide</a>
+        <a href="gita-verse.html" class="nav-link">Daily Verse</a>
+        <a href="dharma-compass.html" class="nav-link">Dharma Compass</a>
+        <a href="gita-explorer.html" class="nav-link">Gita Explorer</a>
+        <a href="guna-quiz.html" class="nav-link active">Guna Quiz</a>
+        <a href="battlefield.html" class="nav-link">Battlefield</a>
+        <a href="dharma-streak.html" class="nav-link">Streak</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="krishna-guide.html" class="nav-link">Krishna Guide</a>
+    <a href="gita-verse.html" class="nav-link">Daily Verse</a>
+    <a href="dharma-compass.html" class="nav-link">Dharma Compass</a>
+    <a href="gita-explorer.html" class="nav-link">Gita Explorer</a>
+    <a href="guna-quiz.html" class="nav-link active">Guna Quiz</a>
+    <a href="battlefield.html" class="nav-link">Battlefield</a>
+    <a href="dharma-streak.html" class="nav-link">Streak</a>
+  </div>
+
+  <!-- ============ INTRO SECTION ============ -->
+  <section class="container" id="introSection" style="padding-bottom: var(--space-20);">
+    <div class="guna-hero reveal">
+      <span class="hero-label">Personality Assessment</span>
+      <h1>Discover Your <em>Guna</em></h1>
+      <p class="hero-subtitle">According to the Bhagavad Gita, nature binds the soul through three gunas - Sattva, Rajas, and Tamas. Understanding your dominant guna reveals your patterns of thought, energy, and behavior.</p>
+      <div class="hero-shloka">सत्त्वं रजस्तम इति गुणाः प्रकृतिसम्भवाः</div>
+      <div class="hero-shloka-ref">Bhagavad Gita 14.5</div>
+    </div>
+
+    <!-- The 3 Guna Cards Overview -->
+    <div class="guna-cards stagger reveal">
+      <div class="guna-card guna-card--sattva">
+        <div class="guna-card-icon">☀️</div>
+        <h3 class="guna-card-name">Sattva</h3>
+        <span class="guna-card-sanskrit">सत्त्व</span>
+        <p class="guna-card-desc">The quality of light, purity, goodness, and harmony. When Sattva dominates, you experience clarity, peace, wisdom, and a natural orientation toward truth and selfless service.</p>
+      </div>
+
+      <div class="guna-card guna-card--rajas">
+        <div class="guna-card-icon">🔥</div>
+        <h3 class="guna-card-name">Rajas</h3>
+        <span class="guna-card-sanskrit">रजस्</span>
+        <p class="guna-card-desc">The quality of energy, passion, ambition, and movement. When Rajas dominates, you feel driven, competitive, eager to achieve, but also prone to restlessness, desire, and anxiety.</p>
+      </div>
+
+      <div class="guna-card guna-card--tamas">
+        <div class="guna-card-icon">🌑</div>
+        <h3 class="guna-card-name">Tamas</h3>
+        <span class="guna-card-sanskrit">तमस्</span>
+        <p class="guna-card-desc">The quality of inertia, stability, rest, and darkness. When Tamas dominates, you experience stillness, sleep, grounding, but also lazy procrastination, confusion, and resistance to change.</p>
+      </div>
+    </div>
+
+    <div class="hero-cta reveal" style="text-align: center;">
+      <button class="btn btn-gold btn-xl btn-round" id="startQuizBtn">Begin the Assessment</button>
+    </div>
+  </section>
+
+  <!-- ============ QUIZ SECTION ============ -->
+  <section class="quiz-section container" id="quizSection">
+    <!-- Quiz Progress Header -->
+    <div class="quiz-progress reveal">
+      <div class="quiz-progress-header">
+        <span class="quiz-progress-label">Assessment Progress</span>
+        <span class="char-count" id="progressCount">1 / 15</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-bar-fill" id="progressFill" style="width: 6.67%;"></div>
+      </div>
+    </div>
+
+    <!-- Slide Viewport (Questions rendered here) -->
+    <div class="quiz-container">
+      <div class="quiz-viewport" id="quizViewport">
+        <!-- Dynamically populated by JS -->
+      </div>
+
+      <!-- Navigation buttons -->
+      <div class="quiz-nav">
+        <button class="btn btn-secondary btn-round" id="prevBtn" disabled>&larr; Back</button>
+        <button class="btn btn-primary btn-round" id="nextBtn">Next &rarr;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RESULT SECTION ============ -->
+  <section class="result-section container" id="resultSection" style="display: none; padding-top: calc(var(--nav-height) + var(--space-8)); padding-bottom: var(--space-24);">
+    <div class="results-header">
+      <span class="results-label">✦ The Mandali of Self</span>
+      <h2 id="resultGunaName">You are Sattva-Dominant</h2>
+      <span class="sanskrit-title" id="resultGunaSanskrit" style="font-family: var(--font-sanskrit); font-size: 2rem; color: var(--color-gold); display: block; margin-top: var(--space-2);">सत्त्व</span>
+      <p class="result-tagline" id="resultGunaTagline" style="font-style: italic; color: var(--color-text-secondary); margin-top: var(--space-3); font-size: var(--text-md);">Purity, harmony, clarity</p>
+    </div>
+
+    <!-- Center Stage: Donut Chart -->
+    <div class="chart-layout reveal">
+      <div class="donut-wrapper">
+        <div class="donut-ring" id="donutRing"></div>
+        <div class="donut-center">
+          <span class="donut-center-label">Dominant</span>
+          <span class="donut-center-name" id="donutPrimaryName">Sattva</span>
+          <span class="donut-center-sanskrit" id="donutPrimarySanskrit">सत्त्व</span>
+        </div>
+      </div>
+
+      <!-- Legend -->
+      <div class="chart-legend">
+        <div class="legend-item">
+          <div class="legend-color" style="background-color: #7A9E6A;"></div>
+          <span class="legend-label">☀️ Sattva (Goodness)</span>
+          <span class="legend-value" id="legendSattva">0%</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-color" style="background-color: #D4943A;"></div>
+          <span class="legend-label">🔥 Rajas (Passion)</span>
+          <span class="legend-value" id="legendRajas">0%</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-color" style="background-color: #8A7B6B;"></div>
+          <span class="legend-label">🌑 Tamas (Stability)</span>
+          <span class="legend-value" id="legendTamas">0%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Description -->
+    <div class="result-description-card card-manuscript reveal" style="max-width: 800px; margin: var(--space-10) auto; padding: var(--space-8);">
+      <p id="resultGunaDesc" style="font-size: var(--text-sm); line-height: 1.8; color: var(--color-text-primary);"></p>
+    </div>
+
+    <div class="divider-temple"></div>
+
+    <!-- Detailed breakdown cards -->
+    <div class="breakdown-grid reveal">
+      <!-- Sattva Breakdown Card -->
+      <div class="result-card" id="card-sattva">
+        <div class="result-card-header">
+          <span class="result-card-icon">☀️</span>
+          <div>
+            <h3 class="result-card-title">Sattva (Goodness)</h3>
+            <span class="result-card-score">0%</span>
+          </div>
+        </div>
+        <div class="result-card-bar">
+          <div class="result-card-bar-fill" style="background-color: #7A9E6A; width: 0%;"></div>
+        </div>
+        <p class="result-card-desc"></p>
+        <div class="guna-facets">
+          <div class="facet-group">
+            <h4>Strengths</h4>
+            <ul class="strengths-list"></ul>
+          </div>
+          <div class="facet-group">
+            <h4>Growth Path</h4>
+            <ul class="growth-list"></ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rajas Breakdown Card -->
+      <div class="result-card" id="card-rajas">
+        <div class="result-card-header">
+          <span class="result-card-icon">🔥</span>
+          <div>
+            <h3 class="result-card-title">Rajas (Passion)</h3>
+            <span class="result-card-score">0%</span>
+          </div>
+        </div>
+        <div class="result-card-bar">
+          <div class="result-card-bar-fill" style="background-color: #D4943A; width: 0%;"></div>
+        </div>
+        <p class="result-card-desc"></p>
+        <div class="guna-facets">
+          <div class="facet-group">
+            <h4>Strengths</h4>
+            <ul class="strengths-list"></ul>
+          </div>
+          <div class="facet-group">
+            <h4>Growth Path</h4>
+            <ul class="growth-list"></ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tamas Breakdown Card -->
+      <div class="result-card" id="card-tamas">
+        <div class="result-card-header">
+          <span class="result-card-icon">🌑</span>
+          <div>
+            <h3 class="result-card-title">Tamas (Stability)</h3>
+            <span class="result-card-score">0%</span>
+          </div>
+        </div>
+        <div class="result-card-bar">
+          <div class="result-card-bar-fill" style="background-color: #8A7B6B; width: 0%;"></div>
+        </div>
+        <p class="result-card-desc"></p>
+        <div class="guna-facets">
+          <div class="facet-group">
+            <h4>Strengths</h4>
+            <ul class="strengths-list"></ul>
+          </div>
+          <div class="facet-group">
+            <h4>Growth Path</h4>
+            <ul class="growth-list"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Viral share section -->
+    <div class="share-card-container reveal" style="max-width: 600px; margin: var(--space-12) auto; text-align: center;">
+      <div class="share-card card-manuscript" style="text-align: left; padding: var(--space-8); border: 2px solid var(--color-gold); background: var(--color-warm-white); border-radius: var(--radius-xl); position: relative; overflow: hidden; margin-bottom: var(--space-6);">
+        <div style="position: absolute; right: -20px; bottom: -20px; font-family: var(--font-sanskrit); font-size: 8rem; color: rgba(207, 166, 107, 0.05); line-height: 1; pointer-events: none;">ॐ</div>
+        <span class="share-card-logo" style="font-family: var(--font-heading); font-size: var(--text-md); font-weight: 600; color: var(--color-text-dark); display: block; margin-bottom: var(--space-4);">त TatTvam</span>
+        
+        <div style="display: flex; gap: var(--space-6); align-items: center;">
+          <div class="share-donut-wrapper" style="position: relative; width: 100px; height: 100px; flex-shrink: 0;">
+            <div id="shareMiniDonutRing" style="width: 100%; height: 100%; border-radius: 50%;"></div>
+            <div style="position: absolute; inset: 15px; background: var(--color-warm-white); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-size: var(--text-md); font-weight: 600; color: var(--color-text-dark);" id="sharePrimaryPct">0%</div>
+          </div>
+          <div>
+            <span style="font-family: var(--font-body); font-size: var(--text-xs); text-transform: uppercase; color: var(--color-text-muted); letter-spacing: 0.08em; display: block; margin-bottom: 2px;">My Guna Profile</span>
+            <h3 style="font-family: var(--font-heading); font-size: var(--text-lg); font-weight: 600; color: var(--color-text-dark); margin-bottom: var(--space-2);"><span id="shareGunaName">Sattva</span>-Dominant</h3>
+            <span style="font-family: var(--font-sanskrit); font-size: var(--text-sm); color: var(--color-gold); display: block; margin-bottom: var(--space-3);" id="shareGunaSanskrit">सत्त्व</span>
+            <div style="display: flex; gap: var(--space-3); font-size: var(--text-xs); color: var(--color-text-secondary); font-weight: 500;">
+              <span id="shareSattvaScore">Sattva 0%</span> · 
+              <span id="shareRajasScore">Rajas 0%</span> · 
+              <span id="shareTamasScore">Tamas 0%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-gold btn-round" id="copyShareBtn">Copy Shareable Results ✦</button>
+    </div>
+
+    <!-- Actions -->
+    <div style="text-align: center; margin-top: var(--space-8);">
+      <button class="btn btn-secondary btn-round" id="retakeBtn">Retake the Quiz</button>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <span>© 2026 TatTvam - tat tvam asi</span>
+        <span>Built with devotion</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/app.js"></script>
+  <script src="../js/guna-quiz.js"></script>
+</body>
+</html>

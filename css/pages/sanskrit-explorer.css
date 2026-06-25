@@ -1,0 +1,281 @@
+/* =============================================
+   TATTVAM — Sanskrit Word Explorer CSS
+   ============================================= */
+
+/* ——— Page Layout ——— */
+.sanskrit-page {
+  padding-top: var(--nav-height);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.sanskrit-header {
+  text-align: center;
+  padding: var(--space-10) var(--space-6) var(--space-6);
+  position: relative;
+  overflow: hidden;
+}
+
+.sanskrit-header h1 {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  color: var(--color-text-dark);
+  margin-bottom: var(--space-3);
+}
+
+.sanskrit-header p {
+  color: var(--color-text-secondary);
+  font-size: var(--text-base);
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+/* ——— Main Layout ——— */
+.sanskrit-body {
+  max-width: var(--max-width-wide);
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 var(--space-6) var(--space-16);
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: var(--space-6);
+}
+
+/* ——— Left Column: Search & Word List ——— */
+.sanskrit-left {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  background: var(--color-warm-white);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-sm);
+  max-height: calc(100vh - var(--nav-height) - var(--space-12));
+  position: sticky;
+  top: calc(var(--nav-height) + var(--space-6));
+  align-self: start;
+}
+
+.search-box-wrap {
+  position: relative;
+}
+
+.search-box-wrap svg {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-muted);
+  width: 16px;
+  height: 16px;
+}
+
+.sanskrit-search-input {
+  width: 100%;
+  padding: var(--space-3) var(--space-4) var(--space-3) var(--space-10);
+  background: var(--color-parchment);
+  border: 1.5px solid var(--color-border-light);
+  border-radius: var(--radius-full);
+  outline: none;
+  font-size: var(--text-sm);
+  transition: all var(--transition-fast);
+}
+
+.sanskrit-search-input:focus {
+  border-color: var(--color-gold);
+  background: var(--color-warm-white);
+}
+
+/* Words list scrollable container */
+.word-scroll-list {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-right: 4px;
+}
+
+.word-scroll-list::-webkit-scrollbar {
+  width: 4px;
+}
+
+.word-scroll-list::-webkit-scrollbar-thumb {
+  background: var(--color-sandstone);
+  border-radius: var(--radius-full);
+}
+
+.word-list-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  transition: all var(--transition-fast);
+}
+
+.word-list-btn:hover {
+  background: rgba(207, 166, 107, 0.08);
+}
+
+.word-list-btn.active {
+  background: rgba(207, 166, 107, 0.15);
+  border-left: 3px solid var(--color-gold);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+.word-btn-title {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text-dark);
+}
+
+.word-btn-sanskrit {
+  font-family: var(--font-sanskrit);
+  font-size: var(--text-xs);
+  color: var(--color-gold);
+}
+
+/* ——— Right Column: Word Ornate Detail Card ——— */
+.sanskrit-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.word-detail-card {
+  background: var(--color-warm-white);
+  border: 1.5px solid var(--color-champagne);
+  border-radius: var(--radius-xl);
+  padding: var(--space-10);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Ornate Corner Corners */
+.word-detail-card .corner {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-color: var(--color-gold);
+  border-style: solid;
+  opacity: 0.4;
+}
+
+.word-detail-card .corner-tl { top: 12px; left: 12px; border-width: 2px 0 0 2px; }
+.word-detail-card .corner-tr { top: 12px; right: 12px; border-width: 2px 2px 0 0; }
+.word-detail-card .corner-bl { bottom: 12px; left: 12px; border-width: 0 0 2px 2px; }
+.word-detail-card .corner-br { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+.word-detail-header {
+  text-align: center;
+  margin-bottom: var(--space-8);
+  position: relative;
+  z-index: 1;
+}
+
+.word-primary-sanskrit {
+  font-family: var(--font-sanskrit);
+  font-size: 3rem;
+  color: var(--color-text-dark);
+  line-height: 1.2;
+  margin-bottom: var(--space-2);
+}
+
+.word-primary-translit {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-style: italic;
+  color: var(--color-gold);
+  margin-bottom: var(--space-3);
+}
+
+.word-primary-meaning {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+}
+
+/* Info grid sections */
+.word-sections {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  position: relative;
+  z-index: 1;
+}
+
+.word-sec-box {
+  padding-bottom: var(--space-6);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.word-sec-box:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.word-sec-title {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-gold);
+  font-weight: 600;
+  margin-bottom: var(--space-2);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.word-sec-text {
+  font-size: var(--text-sm);
+  color: var(--color-text-primary);
+  line-height: 1.8;
+}
+
+.shloka-citation {
+  background: var(--color-parchment);
+  border-left: 3px solid var(--color-gold);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: var(--space-4) var(--space-5);
+  margin-top: var(--space-3);
+  font-family: var(--font-sanskrit);
+  font-size: var(--text-sm);
+  color: var(--color-text-dark);
+  line-height: 1.6;
+  font-style: italic;
+}
+
+.shloka-citation-ref {
+  font-family: var(--font-body);
+  font-size: 10px;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: block;
+  margin-top: var(--space-2);
+  font-style: normal;
+}
+
+/* ——— Responsive ——— */
+@media (max-width: 1024px) {
+  .sanskrit-body {
+    grid-template-columns: 1fr;
+    padding: 0 var(--space-4) var(--space-10);
+  }
+
+  .sanskrit-left {
+    position: static;
+    max-height: 300px;
+  }
+}

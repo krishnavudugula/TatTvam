@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dharma Compass - TatTvam</title>
+  <meta name="description" content="Navigate moral dilemmas with ancient wisdom. Describe your situation and analyze it through the lenses of Dharma, Karma, Scriptures, and practical action paths.">
+  <link rel="stylesheet" href="../css/design-system.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/patterns.css">
+  <link rel="stylesheet" href="../css/pages/dharma-compass.css">
+</head>
+<body class="compass-page">
+
+  <!-- SVG Filters for parchment texture -->
+  <svg style="display:none">
+    <filter id="parchment-texture">
+      <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="4" seed="1"/>
+      <feDiffuseLighting lighting-color="#F8F0E0" surfaceScale="1.5">
+        <feDistantLight azimuth="75" elevation="55"/>
+      </feDiffuseLighting>
+    </filter>
+  </svg>
+
+  <!-- Navigation -->
+  <nav class="nav scrolled" id="mainNav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <span class="logo-mark">त</span>
+        TatTvam
+      </a>
+      <div class="nav-links">
+        <a href="krishna-guide.html" class="nav-link">Krishna Guide</a>
+        <a href="gita-verse.html" class="nav-link">Daily Verse</a>
+        <a href="dharma-compass.html" class="nav-link active">Dharma Compass</a>
+        <a href="gita-explorer.html" class="nav-link">Gita Explorer</a>
+        <a href="guna-quiz.html" class="nav-link">Guna Quiz</a>
+        <a href="battlefield.html" class="nav-link">Battlefield</a>
+        <a href="dharma-streak.html" class="nav-link">Streak</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="krishna-guide.html" class="nav-link">Krishna Guide</a>
+    <a href="gita-verse.html" class="nav-link">Daily Verse</a>
+    <a href="dharma-compass.html" class="nav-link active">Dharma Compass</a>
+    <a href="gita-explorer.html" class="nav-link">Gita Explorer</a>
+    <a href="guna-quiz.html" class="nav-link">Guna Quiz</a>
+    <a href="battlefield.html" class="nav-link">Battlefield</a>
+    <a href="dharma-streak.html" class="nav-link">Streak</a>
+  </div>
+
+  <!-- Hero -->
+  <header class="compass-hero reveal">
+    <span class="hero-label">
+      <span class="label-dot"></span>
+      Moral GPS
+    </span>
+    <h1>Dharma Compass</h1>
+    <p class="hero-subtitle">"Dharma stands as the compass of the soul, pointing toward truth in moments of shadow."</p>
+    <p class="hero-sanskrit">धर्मो रक्षति रक्षितः</p>
+  </header>
+
+  <!-- Input Dilemma Section -->
+  <section class="compass-input-section container" id="inputSection">
+    <div class="input-card reveal-scale">
+      <div class="corner corner-tl"></div>
+      <div class="corner corner-tr"></div>
+      <div class="corner corner-bl"></div>
+      <div class="corner corner-br"></div>
+
+      <span class="input-card-label">Describe Your Moral Dilemma</span>
+      <textarea class="compass-textarea" id="compassInput" placeholder="Write about a situation you are facing... (e.g., 'My friend lied to me, and now I am confused if I should confront them or remain silent.')" maxlength="500"></textarea>
+      
+      <div class="input-footer">
+        <span class="char-count" id="charCount">0 / 500</span>
+        <button class="seek-btn" id="seekBtn" disabled>
+          Seek Guidance 
+          <span class="btn-icon-compass">🧭</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Quick Dilemma Chips -->
+    <div class="chips-section reveal">
+      <h2 class="chips-label">Or try an example dilemma</h2>
+      <div class="compass-chips">
+        <button class="compass-chip" data-situation="My friend lied to me. I feel hurt and betrayed, and don't know whether to confront them or protect the peace.">
+          <span class="chip-icon">🤝</span> Friend lied to me
+        </button>
+        <button class="compass-chip" data-situation="I was offered a promotion, but it requires moving away from my aging parents who need my presence.">
+          <span class="chip-icon">🏢</span> Promotion vs Family
+        </button>
+        <button class="compass-chip" data-situation="A coworker took credit for a project I spent months building. Should I expose them or focus on my work?">
+          <span class="chip-icon">💻</span> Coworker took credit
+        </button>
+        <button class="compass-chip" data-situation="I found some money on the floor in an empty hallway. No one saw me. I don't know whether to keep it or report it.">
+          <span class="chip-icon">💵</span> Found money
+        </button>
+        <button class="compass-chip" data-situation="My parents want me to choose a safe career path in finance, but my passion lies in writing and literature.">
+          <span class="chip-icon">🎨</span> Passion vs Duty
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Compass Mandala / Oracle Animation Section -->
+  <section class="compass-oracle container" id="compassOracle">
+    <div class="mandala-container">
+      <div class="mandala-ring-outer"></div>
+      <div class="mandala-ring-middle"></div>
+      <div class="mandala-ring-inner"></div>
+      <div class="mandala-center">
+        <span class="om-symbol">ॐ</span>
+      </div>
+      <div class="cardinal-points">
+        <span class="cardinal-point n">ध</span> <!-- Dharma -->
+        <span class="cardinal-point e">क</span> <!-- Karma -->
+        <span class="cardinal-point s">श</span> <!-- Shastra -->
+        <span class="cardinal-point w">म</span> <!-- Marga -->
+      </div>
+    </div>
+    <h2 class="oracle-status" id="oracleStatus">Consulting the ancient texts...</h2>
+    <p class="oracle-substatus" id="oracleSubstatus">Searching through the wisdom of the ages</p>
+  </section>
+
+  <!-- Results Section -->
+  <section class="compass-results container" id="compassResults">
+    <div class="results-header">
+      <span class="results-label">✦ The Compass Reveals</span>
+      <h2>Your <strong>Dharmic Analysis</strong></h2>
+      <div class="situation-echo" id="situationEcho">"My friend lied to me"</div>
+    </div>
+
+    <!-- Four-Panel Grid -->
+    <div class="results-grid">
+      <!-- Dharma Panel -->
+      <div class="result-panel panel-dharma" id="panelDharma">
+        <div class="panel-accent"></div>
+        <div class="panel-header">
+          <div class="panel-icon">⚖️</div>
+          <div>
+            <span class="panel-label">Dharma Lense (Duty)</span>
+            <h3 class="panel-title">The Pillar of Satya</h3>
+          </div>
+        </div>
+        <div class="panel-body">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+
+      <!-- Karma Panel -->
+      <div class="result-panel panel-karma" id="panelKarma">
+        <div class="panel-accent"></div>
+        <div class="panel-header">
+          <div class="panel-icon">⟳</div>
+          <div>
+            <span class="panel-label">Karma Lens (Action & Echo)</span>
+            <h3 class="panel-title">Karmic Consequences</h3>
+          </div>
+        </div>
+        <div class="panel-body">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+
+      <!-- Scripture Panel -->
+      <div class="result-panel panel-scripture" id="panelScripture">
+        <div class="panel-accent"></div>
+        <div class="panel-header">
+          <div class="panel-icon">📜</div>
+          <div>
+            <span class="panel-label">Scriptural Wisdom</span>
+            <h3 class="panel-title">Verse Reference</h3>
+          </div>
+        </div>
+        <div class="panel-body">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+
+      <!-- Path Panel -->
+      <div class="result-panel panel-path" id="panelPath">
+        <div class="panel-accent"></div>
+        <div class="panel-header">
+          <div class="panel-icon">🧭</div>
+          <div>
+            <span class="panel-label">Dharmic Path (Guidance)</span>
+            <h3 class="panel-title">Recommended Path</h3>
+          </div>
+        </div>
+        <div class="panel-body">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Reset Button -->
+    <div style="text-align: center; margin-top: var(--space-12);">
+      <button class="btn btn-gold btn-round btn-lg" id="restartBtn">Seek Guidance on Another Dilemma</button>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <span>© 2026 TatTvam - tat tvam asi</span>
+        <span>Built with devotion</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/app.js"></script>
+  <script src="../js/dharma-compass.js"></script>
+</body>
+</html>

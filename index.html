@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TatTvam - A Living Digital Spiritual Ecosystem</title>
+  <meta name="description" content="Rediscover the timeless wisdom of Sanatana Dharma through AI-powered spiritual guidance, interactive scriptures, and personal growth tools. TatTvam is your spiritual mentor grounded in Hindu philosophy.">
+  <link rel="stylesheet" href="css/design-system.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/patterns.css">
+  <link rel="stylesheet" href="css/pages/landing.css">
+</head>
+<body>
+
+  <!-- SVG Filters -->
+  <svg style="display:none">
+    <filter id="parchment-texture">
+      <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="4" seed="1"/>
+      <feDiffuseLighting lighting-color="#F8F0E0" surfaceScale="1.5">
+        <feDistantLight azimuth="75" elevation="55"/>
+      </feDiffuseLighting>
+    </filter>
+  </svg>
+
+  <!-- Navigation -->
+  <nav class="nav" id="mainNav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-mark">त</span>
+        TatTvam
+      </a>
+      <div class="nav-links">
+        <a href="pages/krishna-guide.html" class="nav-link">Krishna Guide</a>
+        <a href="pages/gita-verse.html" class="nav-link">Daily Verse</a>
+        <a href="pages/dharma-compass.html" class="nav-link">Dharma Compass</a>
+        <a href="pages/gita-explorer.html" class="nav-link">Gita Explorer</a>
+        <a href="pages/guna-quiz.html" class="nav-link">Guna Quiz</a>
+        <a href="pages/battlefield.html" class="nav-link">Battlefield</a>
+        <a href="pages/dharma-streak.html" class="nav-link">Streak</a>
+        <a href="#" class="nav-cta">Explore All</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="pages/krishna-guide.html" class="nav-link">Krishna Guide</a>
+    <a href="pages/gita-verse.html" class="nav-link">Daily Verse</a>
+    <a href="pages/dharma-compass.html" class="nav-link">Dharma Compass</a>
+    <a href="pages/gita-explorer.html" class="nav-link">Gita Explorer</a>
+    <a href="pages/guna-quiz.html" class="nav-link">Guna Quiz</a>
+    <a href="pages/battlefield.html" class="nav-link">Battlefield</a>
+    <a href="pages/dharma-streak.html" class="nav-link">Streak</a>
+    <a href="pages/character-chat.html" class="nav-link">Character Chat</a>
+    <a href="pages/wisdom-wall.html" class="nav-link">Wisdom Wall</a>
+    <a href="pages/sanskrit-explorer.html" class="nav-link">Sanskrit Explorer</a>
+    <a href="pages/knowledge-tree.html" class="nav-link">Knowledge Tree</a>
+  </div>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="hero">
+    <div class="hero-mandala"></div>
+    <div class="hero-mandala-inner"></div>
+
+    <div class="hero-content">
+      <span class="hero-label">A Living Digital Spiritual Ecosystem</span>
+
+      <div class="hero-shloka">
+        तत्त्वमसि
+      </div>
+
+      <h1 class="hero-title">
+        Ancient Wisdom,<br><strong>Reimagined</strong>
+      </h1>
+
+      <p class="hero-subtitle">
+        Where the timeless teachings of the Bhagavad Gita, Upanishads, and Mahabharata
+        become your personal guide for modern life's deepest questions.
+      </p>
+
+      <div class="hero-actions">
+        <a href="pages/krishna-guide.html" class="btn btn-primary btn-xl btn-round">
+          Ask Krishna
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#features" class="btn btn-ghost btn-xl btn-round">
+          Explore Features
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-scroll-hint">
+      <span>Scroll to discover</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- ============ PHILOSOPHY ============ -->
+  <section class="philosophy-section">
+    <div class="container">
+      <div class="philosophy-grid reveal">
+        <div class="philosophy-text">
+          <span class="text-label">The Vision</span>
+          <h2>Not a religious website.<br>A <span class="text-gold">spiritual mentor.</span></h2>
+          <p>
+            Most spiritual platforms either dump scripture or offer generic motivation.
+            TatTvam does something different, it connects your real-life problems to the
+            exact teachings of Sanatana Dharma that address your situation.
+          </p>
+          <p>
+            Problem → Principle → Scripture → Story → Application.
+            That's the flow. That's the difference.
+          </p>
+
+          <div class="philosophy-stats">
+            <div class="stat-item">
+              <div class="stat-number">700+</div>
+              <div class="stat-label">Gita Verses</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">12+</div>
+              <div class="stat-label">Features</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">∞</div>
+              <div class="stat-label">Wisdom</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="philosophy-visual">
+          <div class="philosophy-mandala-wrapper">
+            <div class="mandala-outer"></div>
+            <div class="mandala-middle"></div>
+            <div class="mandala-inner">
+              <span class="mandala-center-text">ॐ</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CORE FEATURES HIGHLIGHT ============ -->
+  <section class="core-features-section" id="features">
+    <div class="container">
+
+      <div class="features-header reveal">
+        <span class="text-label">Core Experience</span>
+        <h2>Features That Transform</h2>
+        <p>Each feature is designed to be a living experience, not just a page to read.</p>
+      </div>
+
+      <!-- Krishna AI Guide -->
+      <div class="core-feature-row reveal">
+        <div class="core-feature-text">
+          <span class="core-feature-badge">✦ AI-Powered</span>
+          <h3>Krishna AI Guide</h3>
+          <p>
+            The heart of TatTvam. Ask about life, purpose, fear, relationships, or any personal challenge and receive wisdom rooted in the Gita, Upanishads, and Mahabharata.
+            Not generic advice. Dharma-based reasoning that identifies your core
+            emotion and connects it to exact teachings.
+          </p>
+          <a href="pages/krishna-guide.html" class="btn btn-primary btn-round">
+            Seek Guidance
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+        <div class="core-feature-preview reveal-right">
+          <div class="core-feature-preview-inner">
+            <div class="mini-chat">
+              <div class="mini-chat-bubble mini-chat-user">
+                I'm scared of failing my exam. What should I do?
+              </div>
+              <div class="mini-chat-bubble mini-chat-ai">
+                <div style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-gold); margin-bottom: 6px;">Core Emotion: Fear of Failure</div>
+                Arjuna faced a similar paralysis before Kurukshetra. Krishna taught him:
+                <div style="background: rgba(207,166,107,0.08); border-left: 2px solid var(--color-gold); padding: 8px 12px; margin: 8px 0; border-radius: 0 6px 6px 0; font-family: var(--font-sanskrit); font-style: italic; font-size: 0.85rem;">
+                  कर्मण्येवाधिकारस्ते मा फलेषु कदाचन
+                </div>
+                Your preparation is under your control. The result is not. Focus your energy where your influence exists.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider-temple"></div>
+
+      <!-- Dharma Compass -->
+      <div class="core-feature-row reverse reveal">
+        <div class="core-feature-text">
+          <span class="core-feature-badge">⚖ Moral Navigation</span>
+          <h3>Dharma Compass</h3>
+          <p>
+            Describe any moral dilemma. The Compass analyzes it through four lenses :
+            Dharma, Karma, Scripture, and a recommended path.
+            Like having a wise elder who sees every angle.
+          </p>
+          <a href="pages/dharma-compass.html" class="btn btn-primary btn-round">
+            Find Direction
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+        <div class="core-feature-preview reveal-left">
+          <div class="core-feature-preview-inner">
+            <div style="text-align: center; margin-bottom: 16px;">
+              <div style="font-family: var(--font-heading); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-text-muted); margin-bottom: 8px;">Analyzing</div>
+              <div style="font-family: var(--font-heading); font-size: 1.1rem; color: var(--color-text-dark); font-style: italic;">"My friend lied to me"</div>
+            </div>
+            <div class="mini-compass">
+              <div class="mini-compass-card">
+                <div class="mini-compass-card-title">⚖ Dharma</div>
+                Truth is the foundation of all relationships...
+              </div>
+              <div class="mini-compass-card">
+                <div class="mini-compass-card-title">⟳ Karma</div>
+                Dishonesty plants seeds that return...
+              </div>
+              <div class="mini-compass-card">
+                <div class="mini-compass-card-title">📜 Scripture</div>
+                Vidura teaches that trust, once broken...
+              </div>
+              <div class="mini-compass-card">
+                <div class="mini-compass-card-title">🧭 Path</div>
+                Address with compassion, not anger...
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider-temple"></div>
+
+      <!-- Krishna's Battlefield -->
+      <div class="core-feature-row reveal">
+        <div class="core-feature-text">
+          <span class="core-feature-badge">⚔ Flagship Feature</span>
+          <h3>Krishna's Battlefield</h3>
+          <p>
+            Describe any life conflict. Watch it transform into your personal Kurukshetra
+            with allies, obstacles, fears, and duties mapped out.
+            Then receive Krishna's counsel for your specific battle.
+            This is the feature people remember.
+          </p>
+          <a href="pages/battlefield.html" class="btn btn-gold btn-round btn-lg">
+            Enter the Battlefield
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+        <div class="core-feature-preview reveal-right">
+          <div class="core-feature-preview-inner" style="background: var(--color-parchment);">
+            <div style="text-align:center; margin-bottom: 12px;">
+              <div style="font-family: var(--font-heading); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--color-gold);">Your Kurukshetra</div>
+              <div style="font-family: var(--font-heading); font-size: 1.3rem; color: var(--color-text-dark); margin-top: 4px;">UPSC vs Job</div>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 0.75rem;">
+              <div style="background: var(--color-warm-white); border: 1px solid var(--color-champagne); border-radius: 8px; padding: 10px;">
+                <div style="font-weight: 600; color: var(--color-text-dark); margin-bottom: 4px;">🛡 Allies</div>
+                <div style="color: var(--color-text-secondary);">Discipline, Knowledge, Support system</div>
+              </div>
+              <div style="background: var(--color-warm-white); border: 1px solid var(--color-champagne); border-radius: 8px; padding: 10px;">
+                <div style="font-weight: 600; color: var(--color-text-dark); margin-bottom: 4px;">🔥 Obstacles</div>
+                <div style="color: var(--color-text-secondary);">Competition, Time, Pressure</div>
+              </div>
+              <div style="background: var(--color-warm-white); border: 1px solid var(--color-champagne); border-radius: 8px; padding: 10px;">
+                <div style="font-weight: 600; color: var(--color-text-dark); margin-bottom: 4px;">😨 Fears</div>
+                <div style="color: var(--color-text-secondary);">Failure, Disappointing family</div>
+              </div>
+              <div style="background: var(--color-warm-white); border: 1px solid var(--color-champagne); border-radius: 8px; padding: 10px;">
+                <div style="font-weight: 600; color: var(--color-text-dark); margin-bottom: 4px;">📜 Dharma</div>
+                <div style="color: var(--color-text-secondary);">Follow your calling with detachment</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ ALL FEATURES GRID ============ -->
+  <section class="features-section bg-gradient-warm" id="all-features">
+    <div class="container">
+
+      <div class="features-header reveal">
+        <span class="text-label">Everything TatTvam Offers</span>
+        <h2>A Complete Spiritual Ecosystem</h2>
+        <p>12 interconnected features designed to make ancient wisdom accessible, personal, and alive.</p>
+      </div>
+
+      <div class="features-grid stagger">
+        <a href="pages/krishna-guide.html" class="feature-card-link reveal">
+          <div class="card-feature">
+            <div class="card-icon">🙏</div>
+            <h4 class="card-title">Krishna AI Guide</h4>
+            <p class="card-desc">Ask life's deepest questions. Receive wisdom from the Gita, Upanishads, and Mahabharata personally applied to your situation.</p>
+          </div>
+        </a>
+
+        <a href="pages/gita-verse.html" class="feature-card-link reveal">
+          <div class="card-feature">
+            <div class="card-icon">📿</div>
+            <h4 class="card-title">Daily Gita Verse</h4>
+            <p class="card-desc">A curated shloka each day with Sanskrit, translation, meaning, and practical application for your modern life.</p>
+          </div>
+        </a>
+
+        <a href="pages/dharma-compass.html" class="feature-card-link reveal">
+          <div class="card-feature">
+            <div class="card-icon">🧭</div>
+            <h4 class="card-title">Dharma Compass</h4>
+            <p class="card-desc">Your moral GPS. Describe any dilemma and receive analysis through Dharma, Karma, Scripture, and a recommended path.</p>
+          </div>
+        </a>
+
+        <a href="pages/gita-explorer.html" class="feature-card-link reveal">
+          <div class="card-feature">
+            <div class="card-icon">📖</div>
+            <h4 class="card-title">Interactive Gita</h4>
+            <p class="card-desc">Not a PDF. Each verse with Sanskrit, transliteration, translation, explanation, and modern interpretation. Bookmark and track progress.</p>
+          </div>
+        </a>
+
+        <a href="pages/guna-quiz.html" class="feature-card-link reveal">
+          <div class="card-feature">
+            <div class="card-icon">✦</div>
+            <h4 class="card-title">Discover Your Guna</h4>
+            <p class="card-desc">Sattva, Rajas, or Tamas which quality dominates your nature? Take the assessment and understand yourself deeply.</p>
+          </div>
+        </a>
+
+        <a href="pages/battlefield.html" class="feature-card-link reveal">
+          <div class="card-feature">
+            <div class="card-icon">⚔️</div>
+            <h4 class="card-title">Krishna's Battlefield</h4>
+            <p class="card-desc">Transform any life conflict into your personal Kurukshetra. Map allies, obstacles, fears, and duties. Receive divine counsel.</p>
+          </div>
+        </a>
+
+        <a href="pages/dharma-streak.html" class="feature-card-link reveal">
+          <div class="card-feature">
+            <div class="card-icon">🔥</div>
+            <h4 class="card-title">Dharma Streak</h4>
+            <p class="card-desc">Track meditation, scripture reading, exercise, seva, and charity. Build spiritual discipline with daily streaks and visual progress.</p>
+          </div>
+        </a>
+
+        <a href="pages/character-chat.html" class="feature-card-link reveal">
+          <div class="card-feature">
+            <div class="card-icon">🏛️</div>
+            <h4 class="card-title">Council of Mentors</h4>
+            <p class="card-desc">Consult epic characters like Arjuna and Hanuman, or historical mentors like Vivekananda and Shivaji Maharaj for guidance.</p>
+          </div>
+        </a>
+
+        <a href="pages/wisdom-wall.html" class="feature-card-link reveal">
+          <div class="card-feature">
+            <div class="card-icon">🕊️</div>
+            <h4 class="card-title">Wisdom Wall</h4>
+            <p class="card-desc">An anonymous space where people share spiritual insights, lessons learned, and moments of clarity. No usernames. Only wisdom.</p>
+          </div>
+        </a>
+
+        <a href="pages/sanskrit-explorer.html" class="feature-card-link reveal">
+          <div class="card-feature">
+            <div class="card-icon">🔤</div>
+            <h4 class="card-title">Sanskrit Explorer</h4>
+            <p class="card-desc">Search any Sanskrit word see its meaning, origin, usage across scriptures, and how it connects to daily life.</p>
+          </div>
+        </a>
+
+        <a href="pages/knowledge-tree.html" class="feature-card-link reveal">
+          <div class="card-feature">
+            <div class="card-icon">🌳</div>
+            <h4 class="card-title">Knowledge Tree</h4>
+            <p class="card-desc">A visual tree of Sanatana Dharma. Explore branches of Karma, Dharma, Yoga, Moksha, Vedanta, Bhakti, and more.</p>
+          </div>
+        </a>
+
+        <a href="pages/gita-explorer.html" class="feature-card-link reveal">
+          <div class="card-feature">
+            <div class="card-icon">🗺️</div>
+            <h4 class="card-title">Scripture Search</h4>
+            <p class="card-desc">Ask any question and search across the Gita, Upanishads, Ramayana, and Mahabharata for relevant passages and teachings.</p>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ WISDOM WALL PREVIEW ============ -->
+  <section class="wisdom-preview">
+    <div class="container" style="margin-bottom: var(--space-8);">
+      <div class="features-header reveal">
+        <span class="text-label">From the Wisdom Wall</span>
+        <h2>Shared Reflections</h2>
+        <p>Anonymous wisdom from the community. No names, only insight.</p>
+      </div>
+    </div>
+
+    <div class="wisdom-scroll">
+      <div class="wisdom-preview-card">
+        <p>"The day I stopped asking 'why me?' and started asking 'what now?' - everything changed."</p>
+        <span class="wisdom-meta">A seeker • 3 days ago</span>
+      </div>
+      <div class="wisdom-preview-card">
+        <p>"Forgiveness is not about the other person. It's about freeing your own mind from the prison of resentment."</p>
+        <span class="wisdom-meta">A seeker • 1 week ago</span>
+      </div>
+      <div class="wisdom-preview-card">
+        <p>"Reading the Gita didn't give me answers. It gave me the strength to sit with the questions."</p>
+        <span class="wisdom-meta">A seeker • 2 weeks ago</span>
+      </div>
+      <div class="wisdom-preview-card">
+        <p>"My grandfather said: 'Dharma is not what is easy. It is what is right.' I finally understand."</p>
+        <span class="wisdom-meta">A seeker • 5 days ago</span>
+      </div>
+      <div class="wisdom-preview-card">
+        <p>"I used to think detachment meant not caring. Now I know it means caring without clinging."</p>
+        <span class="wisdom-meta">A seeker • 4 days ago</span>
+      </div>
+      <div class="wisdom-preview-card">
+        <p>"The biggest battle is not outside. It's the one between who you are and who you're afraid to become."</p>
+        <span class="wisdom-meta">A seeker • 1 week ago</span>
+      </div>
+      <div class="wisdom-preview-card">
+        <p>"Meditation taught me that silence is not empty. It's full of answers you're too busy to hear."</p>
+        <span class="wisdom-meta">A seeker • 6 days ago</span>
+      </div>
+      <div class="wisdom-preview-card">
+        <p>"Serve without counting. Give without remembering. Receive without forgetting. That is Karma Yoga."</p>
+        <span class="wisdom-meta">A seeker • 2 days ago</span>
+      </div>
+      <!-- Duplicate for infinite scroll -->
+      <div class="wisdom-preview-card">
+        <p>"The day I stopped asking 'why me?' and started asking 'what now?' - everything changed."</p>
+        <span class="wisdom-meta">A seeker • 3 days ago</span>
+      </div>
+      <div class="wisdom-preview-card">
+        <p>"Forgiveness is not about the other person. It's about freeing your own mind from the prison of resentment."</p>
+        <span class="wisdom-meta">A seeker • 1 week ago</span>
+      </div>
+      <div class="wisdom-preview-card">
+        <p>"Reading the Gita didn't give me answers. It gave me the strength to sit with the questions."</p>
+        <span class="wisdom-meta">A seeker • 2 weeks ago</span>
+      </div>
+      <div class="wisdom-preview-card">
+        <p>"My grandfather said: 'Dharma is not what is easy. It is what is right.' I finally understand."</p>
+        <span class="wisdom-meta">A seeker • 5 days ago</span>
+      </div>
+      <div class="wisdom-preview-card">
+        <p>"I used to think detachment meant not caring. Now I know it means caring without clinging."</p>
+        <span class="wisdom-meta">A seeker • 4 days ago</span>
+      </div>
+      <div class="wisdom-preview-card">
+        <p>"The biggest battle is not outside. It's the one between who you are and who you're afraid to become."</p>
+        <span class="wisdom-meta">A seeker • 1 week ago</span>
+      </div>
+      <div class="wisdom-preview-card">
+        <p>"Meditation taught me that silence is not empty. It's full of answers you're too busy to hear."</p>
+        <span class="wisdom-meta">A seeker • 6 days ago</span>
+      </div>
+      <div class="wisdom-preview-card">
+        <p>"Serve without counting. Give without remembering. Receive without forgetting. That is Karma Yoga."</p>
+        <span class="wisdom-meta">A seeker • 2 days ago</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-card reveal-scale">
+        <span class="text-label" style="margin-bottom: var(--space-6); display: block;">Begin Your Journey</span>
+        <h2>The wisdom you seek<br>is already within you.</h2>
+        <p>TatTvam is simply the mirror. Let ancient teachings illuminate what you already know but have forgotten.</p>
+        <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap;">
+          <a href="pages/krishna-guide.html" class="btn btn-gold btn-xl btn-round">
+            Ask Krishna
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="pages/guna-quiz.html" class="btn btn-ghost btn-xl btn-round">
+            Discover Your Guna
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">TatTvam</div>
+          <p class="footer-desc">A living digital spiritual ecosystem rooted in the timeless wisdom of Sanatana Dharma. Rediscover your roots, find your path.</p>
+        </div>
+        <div>
+          <div class="footer-heading">Explore</div>
+          <div class="footer-links">
+            <a href="pages/krishna-guide.html">Krishna AI Guide</a>
+            <a href="pages/gita-verse.html">Daily Gita Verse</a>
+            <a href="pages/dharma-compass.html">Dharma Compass</a>
+            <a href="pages/gita-explorer.html">Gita Explorer</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-heading">Discover</div>
+          <div class="footer-links">
+            <a href="pages/guna-quiz.html">Discover Your Guna</a>
+            <a href="pages/battlefield.html">Krishna's Battlefield</a>
+            <a href="pages/character-chat.html">Character Chat</a>
+            <a href="pages/knowledge-tree.html">Knowledge Tree</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-heading">Practice</div>
+          <div class="footer-links">
+            <a href="pages/dharma-streak.html">Dharma Streak</a>
+            <a href="pages/wisdom-wall.html">Wisdom Wall</a>
+            <a href="pages/sanskrit-explorer.html">Sanskrit Explorer</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 TatTvam - तत्त्वम्</span>
+        <span>Built with devotion</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

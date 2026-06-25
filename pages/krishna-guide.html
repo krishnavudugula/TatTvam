@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Krishna AI Guide - TatTvam</title>
+  <meta name="description" content="Seek spiritual guidance, life advice, and clarity on fear, anger, and purpose, inspired by the Bhagavad Gita and ancient Dharmic philosophy.">
+  <link rel="stylesheet" href="../css/design-system.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/patterns.css">
+  <link rel="stylesheet" href="../css/pages/krishna-guide.css">
+</head>
+<body class="guide-page">
+
+  <!-- SVG Filters for parchment texture -->
+  <svg style="display:none">
+    <filter id="parchment-texture">
+      <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="4" seed="1"/>
+      <feDiffuseLighting lighting-color="#F8F0E0" surfaceScale="1.5">
+        <feDistantLight azimuth="75" elevation="55"/>
+      </feDiffuseLighting>
+    </filter>
+  </svg>
+
+  <!-- Navigation -->
+  <nav class="nav scrolled" id="mainNav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <span class="logo-mark">त</span>
+        TatTvam
+      </a>
+      <div class="nav-links">
+        <a href="krishna-guide.html" class="nav-link active">Krishna Guide</a>
+        <a href="gita-verse.html" class="nav-link">Daily Verse</a>
+        <a href="dharma-compass.html" class="nav-link">Dharma Compass</a>
+        <a href="gita-explorer.html" class="nav-link">Gita Explorer</a>
+        <a href="guna-quiz.html" class="nav-link">Guna Quiz</a>
+        <a href="battlefield.html" class="nav-link">Battlefield</a>
+        <a href="dharma-streak.html" class="nav-link">Streak</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="krishna-guide.html" class="nav-link active">Krishna Guide</a>
+    <a href="gita-verse.html" class="nav-link">Daily Verse</a>
+    <a href="dharma-compass.html" class="nav-link">Dharma Compass</a>
+    <a href="gita-explorer.html" class="nav-link">Gita Explorer</a>
+    <a href="guna-quiz.html" class="nav-link">Guna Quiz</a>
+    <a href="battlefield.html" class="nav-link">Battlefield</a>
+    <a href="dharma-streak.html" class="nav-link">Streak</a>
+  </div>
+
+  <!-- Header -->
+  <header class="guide-header reveal">
+    <span class="guide-header-label">Consult the Eternal Charioteer</span>
+    <h1>Krishna AI Guide</h1>
+    <p>Seek guidance for life's inner battles. Describe what is in your heart - confusion, fear, relationship trials, or lack of discipline - and receive counsel rooted in Sanatana Dharma.</p>
+  </header>
+
+  <!-- Main Chat Section -->
+  <main class="guide-body container">
+    <!-- Sidebar topics (desktop only/collapsible) -->
+    <aside class="guide-sidebar reveal-left">
+      <div class="sidebar-card">
+        <h2 class="sidebar-heading">Seek Clarity On</h2>
+        <div class="sidebar-topics">
+          <button class="topic-btn" data-question="How do I find my life purpose?">
+            <span class="topic-icon">🧭</span>
+            <span>Life Purpose</span>
+          </button>
+          <button class="topic-btn" data-question="How do I deal with anger and stay calm?">
+            <span class="topic-icon">🔥</span>
+            <span>Anger & Calm</span>
+          </button>
+          <button class="topic-btn" data-question="I am scared of failing. What should I do?">
+            <span class="topic-icon">🍂</span>
+            <span>Fear & Failure</span>
+          </button>
+          <button class="topic-btn" data-question="Why do I keep comparing myself to others?">
+            <span class="topic-icon">🪞</span>
+            <span>Comparison</span>
+          </button>
+          <button class="topic-btn" data-question="How do I deal with grief and the loss of a loved one?">
+            <span class="topic-icon">💧</span>
+            <span>Grief & Loss</span>
+          </button>
+          <button class="topic-btn" data-question="How do I build healthy, meaningful relationships?">
+            <span class="topic-icon">💛</span>
+            <span>Relationships</span>
+          </button>
+          <button class="topic-btn" data-question="How do I build self-discipline and stop being lazy?">
+            <span class="topic-icon">⚡</span>
+            <span>Discipline</span>
+          </button>
+          <button class="topic-btn" data-question="I am confused about my career path and job.">
+            <span class="topic-icon">🏛️</span>
+            <span>Career Path</span>
+          </button>
+          <button class="topic-btn" data-question="I feel overwhelmed, stressed, and anxious.">
+            <span class="topic-icon">🌊</span>
+            <span>Stress & Anxiety</span>
+          </button>
+        </div>
+        <div class="sidebar-footer">
+          <p class="sidebar-note">"You have the right to perform your prescribed duties, but you are not entitled to the fruits of your actions." - Gita 2.47</p>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Chat Interface -->
+    <section class="chat-panel reveal-scale">
+      <div class="chat-panel-header">
+        <div class="krishna-avatar-header">कृ</div>
+        <div class="chat-header-info">
+          <h3>Sri Krishna</h3>
+          <span class="chat-header-status">
+            <span class="status-dot"></span>
+            Presence Active
+          </span>
+        </div>
+      </div>
+
+      <!-- Messages Area -->
+      <div class="messages-area" id="messagesArea">
+        <!-- Messages are rendered dynamically by JS -->
+      </div>
+
+      <!-- Input and Suggestions Container -->
+      <div class="chat-input-container">
+        <!-- Quick Suggestion Chips -->
+        <div class="chat-suggestion-chips">
+          <div class="suggestion-chip" data-question="I feel lost in life.">
+            <span class="chip-icon">🧭</span> I feel lost in life
+          </div>
+          <div class="suggestion-chip" data-question="How to deal with anger?">
+            <span class="chip-icon">🔥</span> Dealing with anger
+          </div>
+          <div class="suggestion-chip" data-question="I am scared of failure.">
+            <span class="chip-icon">🍂</span> Fear of failure
+          </div>
+          <div class="suggestion-chip" data-question="How to find my purpose?">
+            <span class="chip-icon">✨</span> Find my purpose
+          </div>
+        </div>
+
+        <!-- Chat Input Row -->
+        <div class="chat-input-row">
+          <textarea class="chat-text-input" id="chatInput" placeholder="Pour your heart out here... (e.g. 'I am feeling anxious about work')" rows="1"></textarea>
+          <button class="send-btn" id="sendBtn" aria-label="Send message">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <span>© 2026 TatTvam - tat tvam asi</span>
+        <span>Built with devotion</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/app.js"></script>
+  <script src="../js/krishna-guide.js"></script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Gita Explorer - TatTvam</title>
+  <meta name="description" content="Study the Bhagavad Gita interactively. View key verses with Sanskrit text, translation, traditional meaning, and modern/career catalyst interpretations. Track your reading progress.">
+  <link rel="stylesheet" href="../css/design-system.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/patterns.css">
+  <link rel="stylesheet" href="../css/pages/gita-explorer.css">
+</head>
+<body class="explorer-page">
+
+  <!-- SVG Filters for parchment texture -->
+  <svg style="display:none">
+    <filter id="parchment-texture">
+      <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="4" seed="1"/>
+      <feDiffuseLighting lighting-color="#F8F0E0" surfaceScale="1.5">
+        <feDistantLight azimuth="75" elevation="55"/>
+      </feDiffuseLighting>
+    </filter>
+  </svg>
+
+  <!-- Navigation -->
+  <nav class="nav scrolled" id="mainNav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <span class="logo-mark">त</span>
+        TatTvam
+      </a>
+      <div class="nav-links">
+        <a href="krishna-guide.html" class="nav-link">Krishna Guide</a>
+        <a href="gita-verse.html" class="nav-link">Daily Verse</a>
+        <a href="dharma-compass.html" class="nav-link">Dharma Compass</a>
+        <a href="gita-explorer.html" class="nav-link active">Gita Explorer</a>
+        <a href="guna-quiz.html" class="nav-link">Guna Quiz</a>
+        <a href="battlefield.html" class="nav-link">Battlefield</a>
+        <a href="dharma-streak.html" class="nav-link">Streak</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="krishna-guide.html" class="nav-link">Krishna Guide</a>
+    <a href="gita-verse.html" class="nav-link">Daily Verse</a>
+    <a href="dharma-compass.html" class="nav-link">Dharma Compass</a>
+    <a href="gita-explorer.html" class="nav-link active">Gita Explorer</a>
+    <a href="guna-quiz.html" class="nav-link">Guna Quiz</a>
+    <a href="battlefield.html" class="nav-link">Battlefield</a>
+    <a href="dharma-streak.html" class="nav-link">Streak</a>
+  </div>
+
+  <!-- Header -->
+  <header class="explorer-header reveal">
+    <h1>Bhagavad Gita Explorer</h1>
+    <p>Read, study, and absorb the divine dialogue. Navigate through key chapters, search for specific wisdom, and toggle modern career-oriented applications.</p>
+  </header>
+
+  <!-- Main Body -->
+  <main class="explorer-body container">
+    
+    <!-- Sidebar navigation -->
+    <aside class="explorer-sidebar reveal-left">
+      <h2 class="sidebar-title">Chapters</h2>
+      <div class="chapter-list" id="chapterList">
+        <!-- Populated dynamically -->
+      </div>
+    </aside>
+
+    <!-- Main Content Panel -->
+    <section class="explorer-main">
+      
+      <!-- Controls (Search & Interpretation Toggle) -->
+      <div class="explorer-controls reveal">
+        <div class="search-wrap">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" class="search-input" id="searchInput" placeholder="Search verses, translation, or keywords...">
+        </div>
+
+        <div class="toggles-wrap">
+          <label class="switch-label">
+            <span>Modern Interpretation</span>
+            <input type="checkbox" class="switch-input" id="modernToggle">
+            <span class="switch-slider"></span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Chapter Progress Card -->
+      <div class="progress-card reveal-scale">
+        <div class="progress-header">
+          <h2 class="progress-title" id="chapterTitle">Arjuna Vishada Yoga</h2>
+          <span class="progress-pct" id="progressPct">0 / 0 Read (0%)</span>
+        </div>
+        <p id="chapterDesc" style="font-size: var(--text-sm); color: var(--color-text-secondary); line-height: 1.6; margin-bottom: var(--space-4);"></p>
+        <div class="progress-bar" style="height: 6px;">
+          <div class="progress-bar-fill" id="progressFill" style="width: 0%;"></div>
+        </div>
+        <span id="chapterTranslation" style="font-size: var(--text-xs); text-transform: uppercase; color: var(--color-text-muted); font-weight: 500; letter-spacing: 0.1em; margin-top: 8px; display: block;">Arjuna's Dilemma</span>
+      </div>
+
+      <!-- Verse List Container -->
+      <div class="verse-list reveal" id="verseList">
+        <!-- Populated dynamically -->
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Toast Notification Container -->
+  <div class="toast" id="toast">Bookmark saved ✦</div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <span>© 2026 TatTvam - tat tvam asi</span>
+        <span>Built with devotion</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/app.js"></script>
+  <script src="../js/gita-explorer.js"></script>
+</body>
+</html>

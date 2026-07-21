@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chat with Epic Characters - TatTvam</title>
-  <meta name="description" content="Seek different philosophical perspectives by chatting with characters from Indian scriptures: Arjuna, Hanuman, Bhishma, Vidura, and Chanakya.">
+  <meta name="description" content="Seek different philosophical perspectives by chatting with characters from Indian scriptures: Arjuna, Hanuman, Bhishma, Vidura.">
   <link rel="stylesheet" href="../css/design-system.css">
   <link rel="stylesheet" href="../css/components.css">
   <link rel="stylesheet" href="../css/animations.css">
@@ -62,136 +62,302 @@
   </header>
 
   <!-- Categories -->
-  <div class="container text-center reveal" style="margin-bottom: var(--space-4);">
-    <h2 style="font-family: var(--font-heading); font-size: var(--text-lg); color: var(--color-gold);">Epic Characters</h2>
-  </div>
+  <!-- =========================
+     EPIC CHARACTERS
+========================= -->
 
-  <!-- Character Selection Grid -->
-  <section class="selection-container reveal" id="selectionContainer">
-    <!-- Krishna Card -->
-    <div class="char-select-card card-krishna" data-char="krishna">
-      <div class="char-avatar-circle">कृ</div>
-      <h3 class="char-select-name">Sri Krishna</h3>
-      <span class="char-select-title">The Charioteer</span>
-      <p class="char-select-desc">Guides Arjuna and seekers alike, offering cosmic perspectives on duty, action, and detachment.</p>
+<div class="container text-center reveal" style="margin-bottom: var(--space-4);">
+    <h2 class="mentor-category-title">Epic Characters</h2>
+</div>
+
+<section class="selection-container reveal" id="selectionContainer">
+
+    <!-- Sri Krishna -->
+    <div class="char-select-card" data-char="krishna">
+        <div class="char-avatar-circle">
+            <img src="../assets/characters/krishna.webp" alt="Sri Krishna">
+        </div>
+
+        <h3 class="char-select-name">Sri Krishna</h3>
+
+        <span class="char-select-title">
+            The Charioteer
+        </span>
+
+        <p class="char-select-desc">
+            Guides seekers through Dharma, wisdom, and detached action.
+        </p>
     </div>
 
-    <!-- Arjuna Card -->
-    <div class="char-select-card card-arjuna" data-char="arjuna">
-      <div class="char-avatar-circle">अ</div>
-      <h3 class="char-select-name">Arjuna</h3>
-      <span class="char-select-title">The Archer</span>
-      <p class="char-select-desc">Faces battles with deep self-inquiry, seeking to balance duty with compassion during high-stakes crises.</p>
+    <!-- Arjuna -->
+    <div class="char-select-card" data-char="arjuna">
+        <div class="char-avatar-circle">
+            <img src="../assets/characters/arjuna.webp" alt="Arjuna">
+        </div>
+
+        <h3 class="char-select-name">
+            Arjuna
+        </h3>
+
+        <span class="char-select-title">
+            The Archer
+        </span>
+
+        <p class="char-select-desc">
+            Faces inner conflict with courage, duty, and self-inquiry.
+        </p>
     </div>
 
-    <!-- Hanuman Card -->
-    <div class="char-select-card card-hanuman" data-char="hanuman">
-      <div class="char-avatar-circle">ह</div>
-      <h3 class="char-select-name">Hanuman</h3>
-      <span class="char-select-title">The Devotee</span>
-      <p class="char-select-desc">Represents absolute strength through complete humility, overcoming obstacles through selfless devotion.</p>
+    <!-- Hanuman -->
+    <div class="char-select-card" data-char="hanuman">
+        <div class="char-avatar-circle">
+            <img src="../assets/characters/hanuman.webp" alt="Hanuman">
+        </div>
+
+        <h3 class="char-select-name">
+            Hanuman
+        </h3>
+
+        <span class="char-select-title">
+            The Devotee
+        </span>
+
+        <p class="char-select-desc">
+            Embodies strength, humility, unwavering devotion, and fearless service.
+        </p>
     </div>
 
-    <!-- Bhishma Card -->
-    <div class="char-select-card card-bhishma" data-char="bhishma">
-      <div class="char-avatar-circle">भी</div>
-      <h3 class="char-select-name">Bhishma</h3>
-      <span class="char-select-title">The Patriarch</span>
-      <p class="char-select-desc">Stands steadfast by oaths, sacrificing personal joy for institutional duty and societal contract.</p>
+    <!-- Bhishma -->
+    <div class="char-select-card" data-char="bhishma">
+        <div class="char-avatar-circle">
+            <img src="../assets/characters/bhishma.webp" alt="Bhishma">
+        </div>
+
+        <h3 class="char-select-name">
+            Bhishma
+        </h3>
+
+        <span class="char-select-title">
+            The Patriarch
+        </span>
+
+        <p class="char-select-desc">
+            Teaches honor, sacrifice, discipline, and unwavering commitment.
+        </p>
     </div>
 
-    <!-- Vidura Card -->
-    <div class="char-select-card card-vidura" data-char="vidura">
-      <div class="char-avatar-circle">वि</div>
-      <h3 class="char-select-name">Vidura</h3>
-      <span class="char-select-title">The Counselor</span>
-      <p class="char-select-desc">Teaches satya and vidura-niti - practical ethics, family unity, and simple righteous living for daily life.</p>
+    <!-- Vidura -->
+    <div class="char-select-card" data-char="vidura">
+        <div class="char-avatar-circle">
+            <img src="../assets/characters/vidura.webp" alt="Vidura">
+        </div>
+
+        <h3 class="char-select-name">
+            Vidura
+        </h3>
+
+        <span class="char-select-title">
+            The Counselor
+        </span>
+
+        <p class="char-select-desc">
+            Offers timeless wisdom, ethics, and practical righteous living.
+        </p>
     </div>
 
-    <!-- Chanakya Card -->
-    <div class="char-select-card card-chanakya" data-char="chanakya">
-      <div class="char-avatar-circle">चा</div>
-      <h3 class="char-select-name">Chanakya</h3>
-      <span class="char-select-title">The Strategist</span>
-      <p class="char-select-desc">Applies sharp pragmatism, statecraft, economics, and strategic foresight to execute goals and out-think rivals.</p>
-    </div>
-  </section>
+</section>
 
-  <!-- Categories -->
-  <div class="container text-center reveal" style="margin-bottom: var(--space-4);">
-    <h2 style="font-family: var(--font-heading); font-size: var(--text-lg); color: var(--color-gold);">Historical Mentors</h2>
-  </div>
+<!-- ========================================= -->
 
-  <section class="selection-container reveal" id="historicalSelectionContainer">
-    <!-- Vivekananda Card -->
-    <div class="char-select-card card-vivekananda" data-char="vivekananda">
-      <div class="char-avatar-circle">वि</div>
-      <h3 class="char-select-name">Swami Vivekananda</h3>
-      <span class="char-select-title">The Awakening Roar</span>
-      <p class="char-select-desc">Channels immense willpower, fearlessness, and the practical application of Vedanta to modern struggles.</p>
-    </div>
+<div class="mentor-divider"></div>
 
-    <!-- Shankaracharya Card -->
-    <div class="char-select-card card-shankara" data-char="shankara">
-      <div class="char-avatar-circle">शं</div>
-      <h3 class="char-select-name">Adi Shankaracharya</h3>
-      <span class="char-select-title">The Non-Dualist</span>
-      <p class="char-select-desc">Cuts through illusion with razor-sharp logic. Teaches Advaita (non-duality) and supreme detachment.</p>
-    </div>
+<!-- =========================
+     HISTORICAL MENTORS
+========================= -->
 
-    <!-- Shivaji Card -->
-    <div class="char-select-card card-shivaji" data-char="shivaji">
-      <div class="char-avatar-circle">शि</div>
-      <h3 class="char-select-name">Shivaji Maharaj</h3>
-      <span class="char-select-title">The Dharmic King</span>
-      <p class="char-select-desc">Embodies righteous action, leadership, protecting dharma against all odds, and honoring all.</p>
+<div class="container text-center reveal" style="margin-bottom: var(--space-4);">
+    <h2 class="mentor-category-title">
+        Historical Mentors
+    </h2>
+</div>
+
+<section class="selection-container reveal" id="historicalSelectionContainer">
+
+    <!-- Vivekananda -->
+    <div class="char-select-card" data-char="vivekananda">
+        <div class="char-avatar-circle">
+            <img src="../assets/characters/vivekananda.webp" alt="Swami Vivekananda">
+        </div>
+
+        <h3 class="char-select-name">
+            Swami Vivekananda
+        </h3>
+
+        <span class="char-select-title">
+            The Awakening Roar
+        </span>
+
+        <p class="char-select-desc">
+            Inspires fearless action, self-confidence, and practical Vedanta.
+        </p>
     </div>
 
-    <!-- Mirabai Card -->
-    <div class="char-select-card card-mirabai" data-char="mirabai">
-      <div class="char-avatar-circle">मी</div>
-      <h3 class="char-select-name">Mirabai</h3>
-      <span class="char-select-title">The Divine Lover</span>
-      <p class="char-select-desc">Represents absolute surrender and blissful devotion. Teaches that love for the divine supersedes societal norms.</p>
-    </div>
-  </section>
+    <!-- Adi Shankaracharya -->
+    <div class="char-select-card" data-char="shankara">
+        <div class="char-avatar-circle">
+            <img src="../assets/characters/shankara.webp" alt="Adi Shankaracharya">
+        </div>
 
-  <!-- Active Chat Container -->
-  <section class="chat-container container" id="chatContainer">
+        <h3 class="char-select-name">
+            Adi Shankaracharya
+        </h3>
+
+        <span class="char-select-title">
+            The Non-Dualist
+        </span>
+
+        <p class="char-select-desc">
+            Reveals Advaita through reason, wisdom, and inner realization.
+        </p>
+    </div>
+
+    <!-- Shivaji Maharaj -->
+    <div class="char-select-card" data-char="shivaji">
+        <div class="char-avatar-circle">
+            <img src="../assets/characters/shivaji.webp" alt="Shivaji Maharaj">
+        </div>
+
+        <h3 class="char-select-name">
+            Shivaji Maharaj
+        </h3>
+
+        <span class="char-select-title">
+            The Dharmic King
+        </span>
+
+        <p class="char-select-desc">
+            Exemplifies righteous leadership, courage, and protection of Dharma.
+        </p>
+    </div>
+
+    <!-- Bhagavad Ramanujacharya -->
+    <div class="char-select-card" data-char="ramanujacharya">
+        <div class="char-avatar-circle">
+            <img src="../assets/characters/ramanujacharya.webp" alt="Bhagavad Ramanujacharya">
+        </div>
+
+        <h3 class="char-select-name">
+            Bhagavad Ramanujacharya
+        </h3>
+
+        <span class="char-select-title">
+            The Devotional Philosopher
+        </span>
+
+        <p class="char-select-desc">
+            Advocates Vishishtadvaita, devotion, and the path of surrender to God.
+        </p>
+    </div>
+
+</section>
+
+<!-- =========================
+        CHAT PANEL
+========================= -->
+
+<section class="chat-container container" id="chatContainer">
+
     <div class="char-chat-panel" id="chatPanel">
-      
-      <!-- Chat Header -->
-      <div class="char-chat-header">
-        <div class="char-chat-header-info">
-          <div class="char-chat-avatar" id="charChatAvatar">अ</div>
-          <div class="char-chat-details">
-            <h3 id="charChatName">Arjuna</h3>
-            <span id="charChatTitle">The Peerless Archer</span>
-          </div>
-        </div>
-        <button class="char-back-btn" id="backBtn">&larr; Counsel Room</button>
-      </div>
 
-      <!-- Messages Display Area -->
-      <div class="char-messages-area" id="charMessagesArea">
-        <!-- Messages are rendered dynamically by JS -->
-      </div>
+        <!-- Header -->
 
-      <!-- Text Input Area -->
-      <div class="char-chat-input-container">
-        <div class="char-chat-input-row">
-          <textarea class="char-textarea" id="charInput" placeholder="Consult your advisor..." rows="1"></textarea>
-          <button class="char-send-btn" id="charSendBtn" aria-label="Send message">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px; height:20px;">
-              <line x1="22" y1="2" x2="11" y2="13"></line>
-              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-            </svg>
-          </button>
+        <div class="char-chat-header">
+
+            <div class="char-chat-header-info">
+
+                <div class="char-chat-avatar">
+
+                    <img
+                        id="charChatAvatar"
+                        src="../assets/characters/arjuna.webp"
+                        alt="Arjuna">
+
+                </div>
+
+                <div class="char-chat-details">
+
+                    <h3 id="charChatName">
+                        Arjuna
+                    </h3>
+
+                    <span id="charChatTitle">
+                        The Archer
+                    </span>
+
+                </div>
+
+            </div>
+
+            <button
+                class="char-back-btn"
+                id="backBtn">
+
+                ← Council of Mentors
+
+            </button>
+
         </div>
-      </div>
+
+        <!-- Messages -->
+
+        <div
+            class="char-messages-area"
+            id="charMessagesArea">
+
+        </div>
+
+        <!-- Input -->
+
+        <div class="char-chat-input-container">
+
+            <div class="char-chat-input-row">
+
+                <textarea
+                    class="char-textarea"
+                    id="charInput"
+                    rows="1"
+                    placeholder="Seek guidance from your mentor..."></textarea>
+
+                <button
+                    class="char-send-btn"
+                    id="charSendBtn"
+                    aria-label="Send">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round">
+
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+
+                        <polygon
+                            points="22 2 15 22 11 13 2 9 22 2">
+                        </polygon>
+
+                    </svg>
+
+                </button>
+
+            </div>
+
+        </div>
 
     </div>
-  </section>
+
+</section>
 
   <footer class="footer">
     <div class="container">

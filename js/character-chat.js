@@ -222,12 +222,12 @@
         }
       ]
     },
-    mirabai: {
-      name: "Mirabai",
-      title: "The Divine Lover",
-      avatar: "मी",
-      theme: "mirabai",
-      welcome: "Radhe Radhe! Why are you wandering here and there looking for joy? My Giridhar Gopal is sitting right in the temple of your heart. Ask me about love, devotion, ignoring society's judgment, or finding joy.",
+    ramanujacharya: {
+      name: "Bhagavad Ramanujacharya",
+      title: "The Devotional Philosopher",
+      avatar: "रा",
+      theme: "ramanujacharya",
+      welcome: "Salutations! The path of devotion leads to the ultimate truth. Ask me about Vishishtadvaita, devotion, or the path of surrender to God.",
       responses: [
         {
           keywords: ['judge', 'society', 'people say', 'reputation', 'mock'],

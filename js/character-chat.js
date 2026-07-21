@@ -9,7 +9,7 @@
     krishna: {
       name: "Sri Krishna",
       title: "The Charioteer of Dharma",
-      avatar: "कृ",
+      avatar: "../assets/characters/krishna.png",
       theme: "krishna",
       welcome: "I am always with you, Arjuna of the modern age. When confusion clouds your intellect, when fear freezes your heart, or when you are attached to outcomes, surrender your anxieties to Me. Speak, what is troubling your mind?",
       responses: [
@@ -33,7 +33,7 @@
     arjuna: {
       name: "Arjuna",
       title: "The Peerless Archer",
-      avatar: "अ",
+      avatar: "../assets/characters/arjuna.png",
       theme: "arjuna",
       welcome: "I welcome you, friend. I have stood at the center of the battlefield, paralyzed by doubts, my bow slipping from my hands. I know what it means to feel torn. Ask me about facing confusion, doubts, or finding the courage to take up your bow.",
       responses: [
@@ -57,7 +57,7 @@
     hanuman: {
       name: "Hanuman",
       title: "The Devoted Warrior",
-      avatar: "ह",
+      avatar: "../assets/characters/hanuman.png",
       theme: "hanuman",
       welcome: "Jai Shri Ram. 🙏 I am here to serve you, seeker. There is no obstacle too high when your heart is anchored in devotion and selfless service. Ask me about finding strength, overcoming obstacles, or practicing humility.",
       responses: [
@@ -81,7 +81,7 @@
     bhishma: {
       name: "Bhishma",
       title: "The Steadfast Patriarch",
-      avatar: "भी",
+      avatar: "../assets/characters/bhishma.png",
       theme: "bhishma",
       welcome: "Greetings. I have lived a long life governed by vows, duty, and sacrifice. I have seen empires rise and fall, and stood on a bed of arrows, watching the consequences of decisions. Ask me about sacrifice, loyalty, keeping promises, or ethics.",
       responses: [
@@ -105,7 +105,7 @@
     vidura: {
       name: "Vidura",
       title: "The Righteous Counselor",
-      avatar: "वि",
+      avatar: "../assets/characters/vidura.png",
       theme: "vidura",
       welcome: "Welcome, seeker. I served as prime minister, advising kings through dharma. Real wisdom is not complicated - it is simple, practical righteousness in daily life. Ask me about moral decisions, family values, trust, or practical living.",
       responses: [
@@ -126,34 +126,10 @@
         }
       ]
     },
-    chanakya: {
-      name: "Chanakya",
-      title: "The Master Strategist",
-      avatar: "चा",
-      theme: "chanakya",
-      welcome: "Speak. I do not value idle talk. Wisdom without execution is a burden. I helped build an empire from dust using strategy, pragmatism, and foresight. Ask me about career strategy, handling rivals, success, focus, or wealth.",
-      responses: [
-        {
-          keywords: ['strategy', 'plan', 'career', 'execute', 'success', 'goal', 'achieve'],
-          reply: "Never begin a task without asking three questions: Why am I doing it? What will the results be? Will I be successful? Once you begin, banish all fear of failure. A strategist plans three steps ahead. Do not show your cards until you play them."
-        },
-        {
-          keywords: ['enemy', 'rival', 'competition', 'competitor', 'hurt me', 'critic'],
-          reply: "Do not hate your enemies; it clouds your judgment. Instead, study them. Understand their strengths and weaknesses. The best way to defeat an opponent is not through anger, but by out-thinking them. Keep your friends close, and your rivals closer."
-        },
-        {
-          keywords: ['money', 'wealth', 'rich', 'poverty', 'resource', 'finance'],
-          reply: "Wealth is the root of dharma and stability. Accumulate resources honestly and protect them fiercely. A person without wealth is abandoned by society, friends, and relatives. But remember - wealth is a tool to be used, not hoarded out of anxiety."
-        },
-        {
-          default: "Education is your best friend. An educated person is respected everywhere. Youth and beauty fade, but knowledge remains. Stay focused, execute your plans, and let your results make the noise."
-        }
-      ]
-    },
     vivekananda: {
       name: "Swami Vivekananda",
       title: "The Awakening Roar",
-      avatar: "वि",
+      avatar: "../assets/characters/vivekananda.png",
       theme: "vivekananda",
       welcome: "Arise, awake, and stop not till the goal is reached! My child, you are the creator of your own destiny. All power is within you. Ask me about fear, focus, weakness, or finding your true potential.",
       responses: [
@@ -177,7 +153,7 @@
     shankara: {
       name: "Adi Shankaracharya",
       title: "The Non-Dualist",
-      avatar: "शं",
+      avatar: "../assets/characters/shankara.png",
       theme: "shankara",
       welcome: "Salutations. The world is but a passing shadow, while the Self (Atman) alone is real. Why do you grieve for what is temporary? Ask me about detachment, reality, illusion, or finding lasting peace.",
       responses: [
@@ -201,7 +177,7 @@
     shivaji: {
       name: "Shivaji Maharaj",
       title: "The Dharmic King",
-      avatar: "शि",
+      avatar: "../assets/characters/shivaji.png",
       theme: "shivaji",
       welcome: "Har Har Mahadev! A true warrior does not fight out of hatred for what is in front of him, but out of love for what is behind him. Ask me about leadership, fighting injustice, courage, or building something great.",
       responses: [
@@ -225,7 +201,7 @@
     ramanujacharya: {
       name: "Bhagavad Ramanujacharya",
       title: "The Devotional Philosopher",
-      avatar: "रा",
+      avatar: "../assets/characters/ramanujacharya.png",
       theme: "ramanujacharya",
       welcome: "Salutations! The path of devotion leads to the ultimate truth. Ask me about Vishishtadvaita, devotion, or the path of surrender to God.",
       responses: [
@@ -324,9 +300,9 @@
     const char = CHARACTERS_DATA[charKey];
 
     // Update Header DOM
-    charChatAvatar.textContent = char.avatar;
-    charChatName.textContent = char.name;
-    charChatTitle.textContent = char.title;
+  charChatAvatar.src = char.avatar;
+  charChatAvatar.alt = char.name;
+  charChatTitle.textContent = char.title;
 
     // Apply Theme Class
     chatPanel.className = `char-chat-panel theme--${char.theme}`;

@@ -78,30 +78,6 @@
         }
       ]
     },
-    bhishma: {
-      name: "Bhishma",
-      title: "The Steadfast Patriarch",
-      avatar: "../assets/characters/bhishma.png",
-      theme: "bhishma",
-      welcome: "Greetings. I have lived a long life governed by vows, duty, and sacrifice. I have seen empires rise and fall, and stood on a bed of arrows, watching the consequences of decisions. Ask me about sacrifice, loyalty, keeping promises, or ethics.",
-      responses: [
-        {
-          keywords: ['promise', 'vow', 'oath', 'word', 'loyalty', 'commit'],
-          reply: "A promise made must be a promise kept, whatever the cost. I took the vow of celibacy and renounced the throne for my father's happiness. Yes, it brought pain and bounded me to a tragic duty, but a life without commitment is like sand blown by the wind. Stand by your word."
-        },
-        {
-          keywords: ['sacrifice', 'give up', 'lose', 'renounce', 'compromise'],
-          reply: "Sacrifice is the law of life. To gain the higher, you must release the lower. I sacrificed my own happiness for my lineage. When you choose duty over personal pleasure, your life becomes a pillars of strength for others, even if you suffer silently."
-        },
-        {
-          keywords: ['regret', 'mistake', 'pain', 'sad', 'wrong choice'],
-          reply: "I spent my final days on a bed of arrows. I had time to reflect on every decision. I supported the throne of Hastinapur even when it was held by adharma, because of my vow. Sometimes, life places us in impossible positions. Do your duty with clean intent, and let Time be the judge."
-        },
-        {
-          default: "Honor is not given; it is forged through steadfast adherence to duty. Be like a rock in the ocean - let the waves of pleasure and pain crash against you, but remain unmoved."
-        }
-      ]
-    },
     vidura: {
       name: "Vidura",
       title: "The Righteous Counselor",
@@ -126,34 +102,10 @@
         }
       ]
     },
-    vivekananda: {
-      name: "Swami Vivekananda",
-      title: "The Awakening Roar",
-      avatar: "../assets/characters/vivekananda.png",
-      theme: "vivekananda",
-      welcome: "Arise, awake, and stop not till the goal is reached! My child, you are the creator of your own destiny. All power is within you. Ask me about fear, focus, weakness, or finding your true potential.",
-      responses: [
-        {
-          keywords: ['fear', 'scared', 'weak', 'anxious', 'doubt', 'can I'],
-          reply: "The greatest sin is to think yourself weak. Stand up and be strong! Have faith in yourself first, then in God. A handful of strong-minded men and women can move the world. Reject any thought that makes you physically, intellectually, or spiritually weak."
-        },
-        {
-          keywords: ['focus', 'distract', 'study', 'mind', 'concentration'],
-          reply: "Take up one idea. Make that one idea your life - think of it, dream of it, live on that idea. Let the brain, muscles, nerves, every part of your body, be full of that idea, and just leave every other idea alone. This is the way to success."
-        },
-        {
-          keywords: ['help', 'serve', 'charity', 'poor', 'society'],
-          reply: "They alone live who live for others, the rest are more dead than alive. See Shiva in the poor, the weak, and the diseased. When you serve them, you are worshiping the Divine. Be unattached, but pour your heart into serving humanity."
-        },
-        {
-          default: "You can do anything and everything, without even the guidance of any one. Stand up and express the divinity within you. Never say 'I cannot'."
-        }
-      ]
-    },
     shankara: {
       name: "Adi Shankaracharya",
       title: "The Non-Dualist",
-      avatar: "../assets/characters/shankara.png",
+      avatar: "../assets/characters/shankara.webp",
       theme: "shankara",
       welcome: "Salutations. The world is but a passing shadow, while the Self (Atman) alone is real. Why do you grieve for what is temporary? Ask me about detachment, reality, illusion, or finding lasting peace.",
       responses: [
@@ -177,7 +129,7 @@
     shivaji: {
       name: "Shivaji Maharaj",
       title: "The Dharmic King",
-      avatar: "../assets/characters/shivaji.png",
+      avatar: "../assets/characters/shivaji.webp",
       theme: "shivaji",
       welcome: "Har Har Mahadev! A true warrior does not fight out of hatred for what is in front of him, but out of love for what is behind him. Ask me about leadership, fighting injustice, courage, or building something great.",
       responses: [
@@ -201,25 +153,21 @@
     ramanujacharya: {
       name: "Bhagavad Ramanujacharya",
       title: "The Devotional Philosopher",
-      avatar: "../assets/characters/ramanujacharya.png",
+      avatar: "../assets/characters/ramanujacharya.webp",
       theme: "ramanujacharya",
       welcome: "Salutations! The path of devotion leads to the ultimate truth. Ask me about Vishishtadvaita, devotion, or the path of surrender to God.",
       responses: [
         {
-          keywords: ['judge', 'society', 'people say', 'reputation', 'mock'],
-          reply: "Let the world mock! They gave me poison, they locked me out, they called me mad. What does it matter? When the King of the Universe holds your hand, the whisperings of the world sound like the buzzing of flies. Dance to your own divine tune."
+          keywords: ['devotion', 'bhakti', 'love god', 'surrender', 'faith'], 
+          reply: "Bhakti is the path of love and surrender to the Supreme. Through devotion, one transcends the ego and realizes the divine presence in all beings. Serve with love, and you will find God in your heart."
         },
         {
-          keywords: ['love', 'breakup', 'heartbreak', 'lonely', 'alone'],
-          reply: "Human love is a shadow; it comes and goes like the clouds. Turn your immense capacity for love toward the Divine. Once you taste the nectar of divine love, you will never feel lonely again. He is the only true companion."
+          keywords: ['philosophy', 'teachings', 'ramanuja', 'advaita', 'vishishtadvaita'], 
+          reply: "Vishishtadvaita teaches that the soul and God are distinct yet inseparable. The universe is a manifestation of the divine, and our duty is to live in harmony with this truth through devotion and righteous action."
         },
         {
-          keywords: ['joy', 'happy', 'bliss', 'dance', 'sing'],
-          reply: "Joy cannot be bought with gold. It comes when you surrender the heavy burden of 'I' and 'mine' at His lotus feet. Tie the bells of devotion to your ankles and dance in the joy of simply being alive in His presence."
-        },
-        {
-          default: "I have found the wealth of the Divine Name. The more I spend it, the more it grows. Drink the nectar of devotion, let go of your worldly anxieties, and rest in His love."
-        }
+          default: "Remember, the ultimate goal is to realize the presence of God in all aspects of life. Live with love, compassion, and devotion, and you will attain eternal bliss."
+        } 
       ]
     }
   };
@@ -302,6 +250,7 @@
     // Update Header DOM
   charChatAvatar.src = char.avatar;
   charChatAvatar.alt = char.name;
+  charChatName.textContent = char.name;
   charChatTitle.textContent = char.title;
 
     // Apply Theme Class
